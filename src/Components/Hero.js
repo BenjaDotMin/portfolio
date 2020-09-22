@@ -12,7 +12,37 @@ function Hero() {
 
             <div className="ortho">
 
-                <div className="row">
+
+                <div className="ortho__cloudGroup floating__cloud">
+                    <div className="ortho__cloud"><span className="ortho__cloudSides"></span></div>
+                    <div className="ortho__cloud"><span className="ortho__cloudSides"></span></div>
+                    <div className="ortho__cloud"><span className="ortho__cloudSides"></span></div>
+                    <div className="ortho__cloud"><span className="ortho__cloudSides"></span></div>
+                </div>
+
+                <div className="ortho__cloudGroup floating__cloud --fast">
+                    <div className="ortho__cloud"><span className="ortho__cloudSides"></span></div>
+                    <div className="ortho__cloud"><span className="ortho__cloudSides"></span></div>
+                    <div className="ortho__cloud"><span className="ortho__cloudSides"></span></div>
+                    <div className="ortho__cloud"><span className="ortho__cloudSides"></span></div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                {/* <div className="row">
                     <div className="ortho__block">
                         <div className="ortho__sides"></div>
                     </div>
@@ -171,7 +201,7 @@ function Hero() {
                         <div className="ortho__shadow"></div>
                         <div className="ortho__shadow"></div>
                     </h3>
-                </div>
+                </div> */}
 
                 {/* stuff slowly floats? */}
                 {/* rolling balls around content, behind and infront? - if hero slides right */}
