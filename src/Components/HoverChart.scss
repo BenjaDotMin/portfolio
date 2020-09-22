@@ -1,0 +1,77 @@
+.chart{   
+    position: absolute;
+    bottom: -129px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 250px;
+    height: 220px;
+    width: 220px;    
+
+    .chart__info{
+        position: absolute;
+        text-align: center;
+        left: 85px;
+        top: 40px;
+        min-width: 280px;
+        background-color: #fff;
+        padding: 20px 40px 24px 133px;
+        h4{font-size: 1.4rem; margin-bottom: 3px; }
+        label{color:#a2a2a2; font-size:1.2rem;}
+        box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086);
+        box-shadow: -13px 11px 30px rgba(0,0,0,.15);
+    }
+
+    .chart__circle{
+        position: absolute;        
+        border-radius: 100%;       
+       
+        &.--blue{
+            height: 100%;
+            width: 100%;
+            background-color: #ace0ec;
+            clip-path: polygon(50% 50%, 32% 0%, 100% 0%);
+            transform: rotate(-74deg);
+            z-index: 4;
+        }
+
+        &.--yellow{
+            height: 88%;
+            width: 88%;
+            background-color: #FFF9AA;  
+            clip-path: polygon(50% 50%, 0% 0%, 60% 0%);
+            transform: rotate(16deg);
+            z-index: 3;
+        }  
+        
+        &.--purple{
+            height: 76%;
+            width: 76%;
+            background-color: #f4c7ff;  
+            clip-path: polygon(50% 50%, 0% 0%, 172% 0%);
+            transform: rotate(72deg);
+            z-index: 2;
+        }  
+
+        &.--grey{ //back
+            height: 64%;
+            width: 64%;
+            background-color:#e6e6e6;  
+            z-index: 1;
+            box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.012), 0 41.8px 33.4px rgba(0, 0, 0, 0.016);
+            //box-shadow: -13px 11px 30px rgba(0,0,0,.15);
+        }  
+    }    
+
+    &:after{ //front
+        content: "";
+        border-radius: 100%;
+        position: absolute;
+        height: 40%;
+        width: 40%;
+        background-color: white;  
+        box-shadow: 0 2.8px 10px rgba(0, 0, 0, 0.034), 0 6.7px 10px rgba(0, 0, 0, 0.048);
+        //box-shadow: -13px 11px 30px rgba(0,0,0,.15);
+        z-index: 5;
+    }
+}

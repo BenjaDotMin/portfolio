@@ -1,0 +1,26 @@
+.projects{padding-top: 150px;
+
+    .--big{position: absolute; z-index: -2;}
+
+    .circle{       
+        &.--big{           
+            border-radius: 100%;            
+            bottom: 52%;
+            right: -590px;
+            height: 700px;
+            width: 700px;
+            background-color: #fcebff;
+        }
+    }
+
+    .square{ 
+        &.--big{         
+            bottom: 59%;
+            left: 50px;
+            height: 180px;
+            width: 100px;
+            background-color: white;
+            box-shadow: -13px 11px 30px rgba(0, 0, 0, 0.15);
+        }
+    }
+}

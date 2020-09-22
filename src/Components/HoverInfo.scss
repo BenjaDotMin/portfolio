@@ -1,0 +1,33 @@
+.hover{position: absolute; bottom:-24px; left: 350px; 
+    .hover__inner{background:white; position: relative; z-index: 2; padding: 20px 35px 24px 83px; box-shadow:
+        0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+        0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+        0 12.5px 10px rgba(0, 0, 0, 0.06),
+        0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+        0 41.8px 33.4px rgba(0, 0, 0, 0.086);
+        box-shadow: -13px 11px 30px rgba(0,0,0,.15);
+        
+        h4{font-size:1.7rem; margin-bottom: 3px;}
+        ul{ display: flex;
+            li{color:#686868; font-size:1.5rem; margin-right: 5px;}
+        }
+        .hover__outer{background:#ace0ec; position: absolute; top: -15px; left: -22px; display: flex; align-items: center; justify-content: center; height: 74px; width: 74px;
+         span{ svg{font-size: 2.6em;}}
+        }  
+    }
+
+    .dots{position: absolute; 
+        &:nth-child(2){left: auto; bottom: 28px; right: -28px;}
+        &:nth-child(3){left: auto; bottom: -28px; right: -14px;}
+    }  
+      
+    // &.--b{bottom:-34px; left: 100px; .hover__outer{ background: #fff1a6;}}
+    // &.--br{bottom:-34px; right: 150px;
+    //     .hover__outer{ background:#ace0ec;}  
+    //     .dots{position: absolute; 
+    //         &:nth-child(2){left: 235px; bottom: -8px;}
+    //         &:nth-child(3){left: 249px; bottom: 35px;}
+    //     }  
+    // }   
+}
+
