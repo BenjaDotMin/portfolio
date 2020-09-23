@@ -1,24 +1,19 @@
-.hero{
-    height: 100vh;   
+.hero{height: 100vh;
+      
     //background-image: linear-gradient(to top, #fa709a 0%, #fee140 100%);
-
-    .hero__text{
-        position: absolute;       
-    }
+    .hero__text, svg, .sky, .ground{position: absolute;}
    
-    .ortho{      
-        perspective: 1400px; //where we view from (if a box was below us, we would see the top, or see the bottom if it was above us)
-        
-        svg{ position: absolute; fill: #ddd; &:first-child{fill: #f1f1f1;} &:nth-child(2){transform: translateZ(-1px);} &:nth-child(3){transform: translateZ(-2px);} &:nth-child(4){transform: translateZ(-3px);} &:nth-child(5){transform: translateZ(-4px);} &:nth-child(6){transform: translateZ(-5px);} &:nth-child(7){transform: translateZ(-6px);} &:nth-child(8){transform: translateZ(-7px);} &:nth-child(9){transform: translateZ(-8px);} &:nth-child(10){transform: translateZ(-9px);} &:nth-child(11){transform: translateZ(-11px);} &:nth-child(12){transform: translateZ(-12px);} &:nth-child(13){transform: translateZ(-13px);} &:nth-child(14){transform: translateZ(-14px);} &:nth-child(15){transform: translateZ(-15px);} &:nth-child(16){transform: translateZ(-16px);} &:nth-child(17){transform: translateZ(-17px);} &:nth-child(18){transform: translateZ(-18px);} &:nth-child(19){transform: translateZ(-19px);} &:nth-child(20){transform: translateZ(-20px);}}
+    .ortho{height:100%; position: relative; perspective: 4000px; perspective-origin: top left; //where we view from (if a box was below us, we would see the top, or see the bottom if it was above us)
+       
+        svg{fill: #ddd; &:first-child{fill: #f1f1f1;} &:nth-child(2){transform: translateZ(-1px);} &:nth-child(3){transform: translateZ(-2px);} &:nth-child(4){transform: translateZ(-3px);} &:nth-child(5){transform: translateZ(-4px);} &:nth-child(6){transform: translateZ(-5px);} &:nth-child(7){transform: translateZ(-6px);} &:nth-child(8){transform: translateZ(-7px);} &:nth-child(9){transform: translateZ(-8px);} &:nth-child(10){transform: translateZ(-9px);} &:nth-child(11){transform: translateZ(-11px);} &:nth-child(12){transform: translateZ(-12px);} &:nth-child(13){transform: translateZ(-13px);} &:nth-child(14){transform: translateZ(-14px);} &:nth-child(15){transform: translateZ(-15px);} &:nth-child(16){transform: translateZ(-16px);} &:nth-child(17){transform: translateZ(-17px);} &:nth-child(18){transform: translateZ(-18px);} &:nth-child(19){transform: translateZ(-19px);} &:nth-child(20){transform: translateZ(-20px);}}
 
         .row{display: flex; align-items: center;}
 
         //setup rotation
         .ortho__block, .ortho__sphere, .ortho__cylinder, .ortho__heart, .ortho__image, .ortho__hole, .ortho__text{
-            transform: rotateY(-18deg); //rotate this box
             transform-style: preserve-3d; //keep rotated children, rotated   
             display: inline-block; 
-            position: relative;
+            position: absolute;
         }
 
         .ortho__heart{ 
@@ -111,188 +106,7 @@
             &.diamond{transform: rotateY(-18deg) rotateZ(45deg); &.rounded{border-radius: 10px;}}   
             
             &.flat{transform: rotateY(-18deg) rotateX(90deg);}
-        }
-
-        .ortho__block{   
-            width: 200px;
-            height: 200px;           
-            background-color: #f1f1f1;  
-                       
-            .ortho__block{position: absolute; width: 100%;}
-               
-            &:after, &:before, .ortho__shadow, .ortho__sides:after, .ortho__sides:before{
-                content: "";                   
-                width: 100%;
-                height: 100%;    
-                background-color: #ddd;   
-                position: absolute;   
-            }             
-            
-            //rotate the sides independantly   
-            &:before{ //top
-                transform-origin: bottom;
-                transform: rotateX(90deg);      
-                top: -100%;      
-            }  
-    
-            &:after{ //bottom
-                transform-origin: top;
-                transform: rotateX(-90deg);
-                top: 100%; 
-            }      
-            
-            .ortho__sides{     
-                &.back{ 
-                    width: 100%; height: 100%; background-color: #ddd; position: absolute; transform-style: preserve-3d; transform: translateZ(-200px); //match parent width
-                   
-                    &:before{transform: rotateY(-90deg) translateX(200px);} //left   
-                    &:after{transform: rotateY(90deg) translateX(-200px);}//right
-                }               
-                             
-                &:before{ //left
-                    transform-origin: right;
-                    transform: rotateY(-90deg);
-                    left: -100%;
-                }
-                
-                &:after{ //right
-                    transform-origin: left;          
-                    transform: rotateY(90deg);
-                    right: -100%; 
-                }
-            }
-    
-            .ortho__shadow{                            
-                transform: rotateX(90deg);    
-                bottom:-1px;
-                transform-origin: bottom;         
-                background: #c7c7c7;
-                box-shadow: 0px 0px 351px #000000a6;    
-                
-                //mess with position for direction shadow    
-                &.right{            
-                    background: #d7d7d7;      
-                    left:100%;
-                    opacity: 0.55;
-                }
-
-                &.left{            
-                    background: #d7d7d7;      
-                    left:-100%;
-                    opacity: 0.55;
-                }
-
-                &.front{            
-                    background: #d7d7d7;      
-                    transform: translateZ(200px) rotateX(90deg);
-                    opacity: 0.55;
-                }
-            }            
-
-            &.rounded{
-                border-radius: 7px;                
-                //add to 100% to get even gradient either side (5, 95)
-                background: linear-gradient(90deg, #ddd 0%, #f1f1f1 5%, #f1f1f1 95%, #ddd 100%);  
-                                        
-                &:after, &:before, .ortho__sides, .ortho__sides:after, .ortho__sides:before{
-                    border-radius: inherit; 
-                }   
-            }
-
-            //overwrites for new shapes
-            &.thin{              
-                height: 350px;                 
-                
-                &:before{ //top
-                    height: 40px; 
-                    top: -40px;                     
-                }  
-        
-                &:after{ //bottom          
-                    height: 40px; 
-                } 
-
-                .ortho__sides{  
-                    //&.back{transform: translateZ(-40px);}  
-
-                    &:before{
-                        width: 40px;
-                        left: -40px;
-                    }  
-
-                    &:after{
-                        width: 40px;    
-                        right: -40px;   
-                    }                                       
-                }  
-            } 
-
-            &.plus, &.plus .ortho__block{ //itself and inner ortho__block
-                height: 40px;               
-              
-                &:before{ //top
-                    height: 40px; 
-                    top: -40px;                     
-                }  
-        
-                &:after{ //bottom          
-                    height: 40px; 
-                } 
-    
-                .ortho__sides{  
-                    //&.back{transform: translateZ(-40px);}  
-    
-                    &:before{
-                        width: 40px;
-                        left: -40px;
-                    }  
-    
-                    &:after{
-                        width: 40px;    
-                        right: -40px;   
-                    }                                       
-                }  
-
-                .ortho__block{transform:rotateZ(90deg);}
-            }   
-            
-            &.plus{&.cross{transform: rotateY(-18deg) rotateZ(45deg);}}          
-
-            &.tick, &.tick .ortho__block{ //itself and inner ortho__block
-                height: 40px;               
-                
-                &:before{ //top
-                    height: 40px; 
-                    top: -40px;                     
-                }  
-        
-                &:after{ //bottom          
-                    height: 40px; 
-                } 
-    
-                .ortho__sides{  
-                    //&.back{transform: translateZ(-40px);}  
-    
-                    &:before{
-                        width: 40px;
-                        left: -40px;
-                    }  
-    
-                    &:after{
-                        width: 40px;    
-                        right: -40px;   
-                    }                                       
-                }  
-
-                .ortho__block{   
-                    transform-origin: right;
-                    transform: rotateZ(90deg) translateY(30px) translateX(-20px); 
-                    width: 25%;                   
-                }
-            }
-
-            &.tick{transform: rotateY(-18deg) rotateZ(-45deg);}
-        }
+        }        
 
         .ortho__sphere{    
             transform: rotateY(0);            
@@ -363,30 +177,13 @@
                     &:nth-child(8){transform: translateZ(-23px);} 
                 }
             }
-        }   
+        }  
 
-        .ortho__cloudGroup{transform-style: preserve-3d; position: relative;
-            .ortho__cloud{position: absolute; left: 0; top:0; background-color: #ddd; margin-top: 90px; margin-left: 65px; width:200px; display: inline-flex; justify-content: center;
-                &:after{top: -90px;left: 0; height: 180px; width: 180px;  border-radius: 100%;}
-                .ortho__cloudSides{height:90px; width:90px; background-color: inherit;
-                    &:before{ left: -120px; top: -36px; height: 140%; width: 140%;}
-                    &:after{right: -129px; top: -63px; height: 170%; width: 170%; }
-                }   
-                &:nth-child(1){background-color: #f1f1f1;}  
-                &:nth-child(2){transform: translateZ(-5px);}  
-                &:nth-child(3){transform: translateZ(-10px);}  
-                &:nth-child(4){transform: translateZ(-15px);}  
-            }  
-        } 
-        .ortho__cloud, .ortho__cloudSides{position: relative; &:before, &:after{content: ""; border-radius: 100%; background-color:inherit; position: absolute; }}
+        .sky, .ground{width: 100%;}
+
+        .sky{top:0; height:50%;}
+        .ground{bottom:0; height:50%;}
+        
     }  
 }
 
-@keyframes floatAlong {
-    from { transform: rotateY(-22deg) translateX(95vw);}
-    to { transform: rotateY(-22deg) translateX(-37vw);} //width of rotated cloud
-  }
-
-  .floating__cloud{animation-name: floatAlong; animation-duration: 350s; animation-timing-function: linear; animation-iteration-count: infinite;
-    &.--fast{animation-duration: 100s;}
-  }

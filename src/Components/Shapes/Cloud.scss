@@ -1,0 +1,29 @@
+.ortho__cloudGroup{transform-style: preserve-3d; position: absolute;
+   
+    .ortho__cloud, .ortho__cloudSides{position: relative; &:before, &:after{content: ""; border-radius: 100%; background-color:inherit; position: absolute; }}
+    
+    .ortho__cloud{position: absolute; left: 0; top:0; background-color: #ddd; width: 10.4vw; display: inline-flex; justify-content: center;
+        &:after{top: -4.7vw;left: 0; width: 9.38vw; height: 9.38vw; border-radius: 100%;}
+        .ortho__cloudSides{width: 4.7vw; height: 4.7vw; background-color: inherit;
+            &:before{left: -6.22vw; top: -1.9vw; height: 6.57vw; width: 6.57vw;}
+            &:after{right: -6.67vw; top: -3.3vw; height: 8vw; width: 8vw; }
+        }   
+        &:nth-child(1){background-color: #f1f1f1;}  
+        &:nth-child(2){transform: translateZ(-5px);}  
+        &:nth-child(3){transform: translateZ(-10px);}  
+        &:nth-child(4){transform: translateZ(-15px);}  
+    }
+    
+    
+    &.floating__cloud{animation-name: floatAlong; animation-duration: 350s; animation-timing-function: linear; animation-iteration-count: infinite;
+        &.--fast{animation-duration: 100s;}
+    }    
+
+    &:nth-child(1){}
+    &:nth-child(2){}
+} 
+
+@keyframes floatAlong {
+    from {transform: rotateY(-22deg) translateY(10vh) translateX(95vw); }
+    to {transform: rotateY(-22deg) translateY(10vh) translateX(-37vw); } 
+  }
