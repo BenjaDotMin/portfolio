@@ -57,3 +57,4 @@ p    { font-size: 14px; font-size: 1.4rem; } /* = 14px, based on html being 62.5
 }
 
 @mixin orthoPosition($x:30, $y:30, $z:0){transform: rotateY(-48deg) translateX($x+vw) translateY($y+vh) translateZ($z+vw);}
+@mixin blockSize($w:200,$h:200,$d:30){width:$w+vw;height:$h+vh;&:before{height:$d+vw;top:-$d+vw;}&:after{height:$d+vw;}.ortho__sides{&:before{width: $d+vw;left:-$d+vw;}&:after{width:$d+vw;right:-$d+vw;}}}

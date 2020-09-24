@@ -1,10 +1,7 @@
-@mixin blockSize($w:200,$h:200,$d:30){width:$w+vw;height:$h+vh;&:before{height:$d+vw;top:-$d+vw;}&:after{height:$d+vw;}.ortho__sides{&:before{width: $d+vw;left:-$d+vw;}&:after{width:$d+vw;right:-$d+vw;}}}
 @import "../mixins.scss";
 
 .ortho__block{              
     background-color: #f1f1f1;  
-               
-    .ortho__block{position: absolute; width: 100%;}
        
     &:after, &:before, .ortho__shadow, .ortho__sides:after, .ortho__sides:before{
         content: "";                   
@@ -76,37 +73,8 @@
             border-radius: inherit; 
         }   
     }
-
-    &.plus, &.plus .ortho__block{ //itself and inner ortho__block
-        height: 40px;               
-      
-        &:before{ //top
-            height: 40px; 
-            top: -40px;                     
-        }  
-
-        &:after{ //bottom          
-            height: 40px; 
-        } 
-
-        .ortho__sides{  
-            //&.back{transform: translateZ(-40px);}  
-
-            &:before{
-                width: 40px;
-                left: -40px;
-            }  
-
-            &:after{
-                width: 40px;    
-                right: -40px;   
-            }                                       
-        }  
-
-        .ortho__block{transform:rotateZ(90deg);}
-    }   
     
-    &.plus{&.cross{transform: rotateY(-18deg) rotateZ(45deg);}}          
+    &.plus{&.cross{transform: rotateY(-48deg) rotateZ(45deg);}}          
 
     &.tick, &.tick .ortho__block{ //itself and inner ortho__block
         height: 40px;               
@@ -139,26 +107,26 @@
             transform: rotateZ(90deg) translateY(30px) translateX(-20px); 
             width: 25%;                   
         }
-    }
+    }    
 
-    &.tick{transform: rotateY(-18deg) rotateZ(-45deg);}
-
-    &:nth-child(1){
-        @include blockSize(38, 7.2, 20); //w/h/d
-        @include orthoPosition(30, 20); //x/y
+    &.tick{transform: rotateY(-48deg) rotateZ(-45deg);} 
+    
+    
+    &:nth-child(3){
+        @include blockSize(38, 5.2, 20); //w/h/d
+        @include orthoPosition(44, 59); //x/y/z
         &:after{
-            box-shadow: 50px -50px 110px 0px rgba(0, 0, 0, 0.32);
+            //box-shadow: 50px -50px 110px 0px rgba(0, 0, 0, 0.32);
             //box-shadow: 50px 0px 110px 30px rgba(0, 0, 0, 0.22);
             //box-shadow: 120px -120px 190px 20px rgba(0, 0, 0, 0.30);            
         }
     }
 
-    &:nth-child(2){
-        @include blockSize(38, 7.2, 3);
-        @include orthoPosition(30, 10);
+    &:nth-child(4){
+        @include blockSize(20, 30, 1.2);
+        @include orthoPosition(59, 22);
         &:after{
-            box-shadow: 3px 7px 36px 5px rgba(0, 0, 0, 0.12);          
+            //box-shadow: 3px 7px 36px 5px rgba(0, 0, 0, 0.12);          
         }
     }
-
 }

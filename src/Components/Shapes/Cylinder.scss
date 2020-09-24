@@ -1,0 +1,56 @@
+@import "../mixins.scss";
+
+.ortho__cylinder{                 
+    border-radius: 50%;
+    height: 120px;
+    width: 120px;         
+    background-color: #f1f1f1; 
+    
+    &:after, &:before, &.flat .ortho__shadow, .ortho__shadow:after, .ortho__shadow:before{
+        content:"";
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        border-radius: inherit;
+        background-color: #ddd; 
+    }
+
+    &:before{transform: translateZ(-10px);} //first                     
+    &:after{transform: translateZ(-40px);} //back depth
+    
+    .ortho__shadow{ //middle sections if needed
+        border-radius: inherit;                
+        &:first-child{                
+            &:before{transform: translateZ(-20px);} //first                     
+            &:after{transform: translateZ(-30px);} //back depth
+        }                               
+    }
+
+    &.flat{
+        transform: rotateY(-18deg) rotateX(90deg);
+
+        &:before{transform: translateZ(-1px);} //first                     
+        &:after{transform: translateZ(-26px);} //bottom depth
+
+        .ortho__shadow{ //middle sections if needed 
+            transform-style: preserve-3d;  
+
+            //all shadows(from its Z'd pos)
+            &:before{transform: translateZ(-1px);}                    
+            &:after{transform: translateZ(-2px);} 
+
+            //push down each shadow
+            &:first-child {transform: translateZ(-2px);}  
+            &:nth-child(2){transform: translateZ(-5px);} 
+            &:nth-child(3){transform: translateZ(-8px);} 
+            &:nth-child(4){transform: translateZ(-11px);} 
+            &:nth-child(5){transform: translateZ(-14px);} 
+            &:nth-child(6){transform: translateZ(-17px);} 
+            &:nth-child(7){transform: translateZ(-20px);} 
+            &:nth-child(8){transform: translateZ(-23px);} 
+        }
+    }
+
+    @include orthoPosition(44, 59); //x/y/z
+}   
+

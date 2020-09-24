@@ -1,0 +1,22 @@
+//@import "../mixins.scss";
+
+.ortho__image{
+    //@include blockSize(10, 3); //w/h/d
+    //@include orthoPosition(0, 0, 0); //x/y/z
+    svg{position: absolute;}
+}
+
+.ortho__block, .ortho__cylinder{
+    .ortho__image{
+        width: 100%;
+        height: 100%; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translateZ(10px) translateX(0%) translateY(0%); 
+        
+        svg{width:60%; fill: red;
+            &:first-child{fill: green;}
+        }
+    }
+}
