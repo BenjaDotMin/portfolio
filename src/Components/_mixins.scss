@@ -1,12 +1,6 @@
 $orange:#F0823C;
 $black: #272727;
 
-*{box-sizing: border-box;}
-body{ margin:0; }
-
-html { font-size: 62.5%; } 
-p    { font-size: 14px; font-size: 1.4rem; } /* = 14px, based on html being 62.5% */
-
 @mixin border-radius($radius) {
     -webkit-border-radius: $radius;
     -moz-border-radius: $radius;

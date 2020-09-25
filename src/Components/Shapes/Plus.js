@@ -3,9 +3,9 @@ import "./Plus.scss";
 
 function Plus() {
     return (
-        <div className="ortho__block plus">
+        <div className="ortho__block plus _3d">
             <div className="ortho__sides"></div>
-            <div className="ortho__block">
+            <div className="ortho__block _3d">
                 <div className="ortho__sides"></div>
             </div>
         </div>

@@ -114,7 +114,7 @@
     
     &:nth-child(3){
         @include blockSize(38, 5.2, 20); //w/h/d
-        @include orthoPosition(44, 59); //x/y/z
+        @include orthoPosition(-24, -16); //x/y/z
         &:after{
             //box-shadow: 50px -50px 110px 0px rgba(0, 0, 0, 0.32);
             //box-shadow: 50px 0px 110px 30px rgba(0, 0, 0, 0.22);
@@ -124,9 +124,14 @@
 
     &:nth-child(4){
         @include blockSize(20, 30, 1.2);
-        @include orthoPosition(59, 22);
+        @include orthoPosition(-29, -22);
         &:after{
             //box-shadow: 3px 7px 36px 5px rgba(0, 0, 0, 0.12);          
         }
+    }
+
+    &:nth-child(5){
+        @include blockSize(38, 5.2, 20); //w/h/d
+        @include orthoPosition(-24, -16); //x/y/z
     }
 }

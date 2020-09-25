@@ -13,7 +13,7 @@
 .ortho__cylinder, .ortho__block{
     .ortho__block{        
         &.plus, &.plus .ortho__block{
-            @include blockSize(3, 1.5, 1);
+            @include blockSize(3.5, 1.5, 1);
             transform: translateZ(11px) translateX(-50%) translateY(-50%);
             background-color:green;        
             &:before, &:after, .ortho__sides:before, .ortho__sides:after{background-color:red;}          

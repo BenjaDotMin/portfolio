@@ -2,13 +2,13 @@ import React from 'react';
 import Image from "./Image";
 import "./Block.scss";
 
-function Block({ child }) {
+function Block({ parent }) {
     return (
-        <div className="ortho__block">
+        <div className={`ortho__block _3d ${parent ? "--parent" : ""}`}>
             <div className="ortho__sides"></div>
 
-            {child ? (
-                <Image />
+            {parent ? (
+                <Image child />
             ) : ""}
 
         </div>

@@ -1,5 +1,6 @@
 *{box-sizing: border-box;}
-html{font-size: 62.5%;}
+html { font-size: 62.5%; } 
+
 body {
   //background-color:#fa709a;
   margin: 0;
@@ -21,3 +22,5 @@ ul{margin: 0; padding: 0;
 }
 
 a{text-decoration: none;}
+
+p{ font-size: 14px; font-size: 1.4rem; } /* = 14px, based on html being 62.5% */

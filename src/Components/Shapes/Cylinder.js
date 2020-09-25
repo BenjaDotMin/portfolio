@@ -2,13 +2,13 @@ import React from 'react';
 import "./Cylinder.scss";
 import Plus from './Plus';
 
-function Cylinder({ child }) {
+function Cylinder({ parent }) {
     return (
-        <div className="ortho__cylinder">
+        <div className={`ortho__cylinder _3d ${parent ? "--parent" : ""}`}>
             <div className="ortho__shadow"></div>
 
-            {child ? (
-                <Plus />
+            {parent ? (
+                <Plus child />
             ) : ""}
         </div>
     )
