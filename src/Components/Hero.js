@@ -24,11 +24,10 @@ function Hero() {
                 <Block parent />
 
 
-                <Cylinder parent />
+                <Cylinder parent clickable />
 
-                <MessageIcon />
-
-                <Image />
+                <MessageIcon clickable />
+                <Image clickable />
 
 
                 {/* <div className="row">

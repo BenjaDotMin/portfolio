@@ -16,7 +16,7 @@
     }
 
     &:before{transform: translateZ(-10px);} //first                     
-    &:after{transform: translateZ(-20px);} //back depth
+    &:after{transform: translateZ(-40px);} //back depth
     
     .ortho__shadow{ //middle sections if needed
         border-radius: inherit;                
