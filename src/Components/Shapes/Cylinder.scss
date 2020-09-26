@@ -56,3 +56,10 @@
     @include orthoPosition(-44, -59); //x/y/z
 }   
 
+
+.--parent{
+    .ortho__cylinder{ 
+        transform: rotateY(0) translateZ(38px);
+        .ortho__shadow{transform: none;}
+    }
+}
