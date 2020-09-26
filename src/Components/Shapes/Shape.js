@@ -1,9 +1,9 @@
 import React from 'react';
-import "./Plus.scss";
+import "./Shape.scss";
 
-function Plus() {
+function Shape({ cross, plus, tick }) {
     return (
-        <div className="ortho__block plus _3d">
+        <div className={`ortho__block _3d ${cross ? "--plus --cross" : ""} ${plus ? "--plus" : ""} ${tick ? "--tick" : ""}`}>
             <div className="ortho__sides"></div>
             <div className="ortho__block _3d">
                 <div className="ortho__sides"></div>
@@ -12,4 +12,4 @@ function Plus() {
     )
 }
 
-export default Plus
+export default Shape

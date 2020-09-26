@@ -133,6 +133,26 @@ function App() {
       });
     });
 
+    const floats = document.querySelectorAll(".--float");
+    floats.forEach(float => {
+      gsap.to(float, {
+        duration: 3,
+        y: "-=10px",
+        yoyo: true,
+        repeat: -1,
+        ease: "sine.inOut",
+      });
+    })
+
+    const sphere = document.querySelector(".ortho__sphere");
+    gsap.from(sphere, {
+      duration: 10,
+      z: 1600,
+      ease: "sine.out",
+    });
+
+
+
     return () => { }
   }, []);
 

@@ -1,4 +1,5 @@
-@import "../mixins.scss";
+@import "../_blockSize.scss";
+@import "../_orthoPosition.scss";
 
 .ortho__block{              
     background-color: #f1f1f1;  
@@ -64,57 +65,20 @@
         }
     }            
 
-    &.rounded{
-        border-radius: 7px;                
-        //add to 100% to get even gradient either side (5, 95)
-        background: linear-gradient(90deg, #ddd 0%, #f1f1f1 5%, #f1f1f1 95%, #ddd 100%);  
-                                
-        &:after, &:before, .ortho__sides, .ortho__sides:after, .ortho__sides:before{
-            border-radius: inherit; 
-        }   
-    }
-    
-    &.plus{&.cross{transform: rotateY(-48deg) rotateZ(45deg);}}          
+    &.--rounded{
+        border-radius: 30px;       
+        &:after, &:before, .ortho__sides, .ortho__sides:after, .ortho__sides:before{border-radius: inherit;}  
 
-    &.tick, &.tick .ortho__block{ //itself and inner ortho__block
-        height: 40px;               
+        //add to 100% to get even gradient either side (5, 95), but no shadow would be on left for us
+        background: linear-gradient(90deg,#f1f1f1 0%, #f1f1f1 90%, #ddd 100%);  
         
-        &:before{ //top
-            height: 40px; 
-            top: -40px;                     
-        }  
-
-        &:after{ //bottom          
-            height: 40px; 
-        } 
-
-        .ortho__sides{  
-            //&.back{transform: translateZ(-40px);}  
-
-            &:before{
-                width: 40px;
-                left: -40px;
-            }  
-
-            &:after{
-                width: 40px;    
-                right: -40px;   
-            }                                       
-        }  
-
-        .ortho__block{   
-            transform-origin: right;
-            transform: rotateZ(90deg) translateY(30px) translateX(-20px); 
-            width: 25%;                   
-        }
-    }    
-
-    &.tick{transform: rotateY(-48deg) rotateZ(-45deg);} 
-    
-    
+        //left side would have full light source                              
+        .ortho__sides:before{background-color: #f1f1f1;}  
+    }          
+        
     &:nth-child(3){
         @include blockSize(38, 5.2, 20); //w/h/d
-        @include orthoPosition(-24, -16); //x/y/z
+        @include orthoPosition(-24, -16); //x/y/z/rz
         &:after{
             //box-shadow: 50px -50px 110px 0px rgba(0, 0, 0, 0.32);
             //box-shadow: 50px 0px 110px 30px rgba(0, 0, 0, 0.22);
@@ -132,6 +96,6 @@
 
     &:nth-child(5){
         @include blockSize(38, 5.2, 20); //w/h/d
-        @include orthoPosition(-24, -16); //x/y/z
+        @include orthoPosition(-24, -16); //x/y/z/rz
     }
 }

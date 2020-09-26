@@ -1,13 +1,14 @@
+@import "../_orthoPosition.scss";
+
 .ortho__messageIcon{
     width: 12vw;
-    height: 12vw;
-    transform:rotateY(-48deg) translateX(-20vw) translateY(-30vh) translateZ(0px); 
+    height: 12vw; //so dots center
+    @include orthoPosition(0, 0);//x/y/z/rz
     svg{fill: red;
         &:first-child{fill: green;} 
     }
 
     .cylinder__dots{display: flex; align-items: center; justify-content: center; height: 59%;
-
         .ortho__cylinder{
             transform: translateX(0) translateY(0) translateZ(10px);
             position: relative;
@@ -15,6 +16,5 @@
             width: 20px;
             margin: 0 7px;
         }       
-
     }
 }

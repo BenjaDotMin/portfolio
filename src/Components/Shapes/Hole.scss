@@ -1,0 +1,49 @@
+.ortho__hole{
+    height: 100px;
+    width: 100px;           
+    border: 30px solid #f1f1f1;  //thickness
+    transform: rotateY(-48deg);
+    
+    &:before, &:after, .ortho__shadow:after, .ortho__shadow:before{
+        content:"";     
+        height: 100%;
+        width: 100%;              
+        position: absolute;
+        border-radius: inherit;
+        border: inherit;
+        border-color: #ddd;               
+    }
+
+    &:before{transform: translateX(-30px) translateY(-30px) translateZ(-1px);} //first                     
+    &:after{transform: translateX(-30px) translateY(-30px) translateZ(-26px);} //bottom depth
+
+    .ortho__shadow{ //middle sections if needed
+        height: 100px; //match parent height
+        width: 100px;  //match parent width   
+        border-radius: inherit; 
+        border: inherit;   
+        position: absolute; 
+        border-color: #ddd; 
+        transform-style: preserve-3d;  
+
+        //all shadows(from its Z'd pos)
+        &:before{transform: translateX(-30px) translateY(-30px) translateZ(-1px);}                    
+        &:after{transform:  translateX(-30px) translateY(-30px)translateZ(-2px);} 
+
+        //push down each shadow element
+        &:first-child {transform: translateX(-30px) translateY(-30px) translateZ(-2px);}  
+        &:nth-child(2){transform: translateX(-30px) translateY(-30px) translateZ(-5px);} 
+        &:nth-child(3){transform: translateX(-30px) translateY(-30px) translateZ(-8px);} 
+        &:nth-child(4){transform: translateX(-30px) translateY(-30px) translateZ(-11px);} 
+        &:nth-child(5){transform: translateX(-30px) translateY(-30px) translateZ(-14px);} 
+        &:nth-child(6){transform: translateX(-30px) translateY(-30px) translateZ(-17px);} 
+        &:nth-child(7){transform: translateX(-30px) translateY(-30px) translateZ(-20px);} 
+        &:nth-child(8){transform: translateX(-30px) translateY(-30px) translateZ(-23px);} 
+    } 
+            
+    &.--donut{border-radius: 50%;}
+
+    &.--diamond{transform: rotateY(-48deg) rotateZ(45deg); &.--rounded{border-radius: 10px;}}   
+    
+    &.--flat{transform: rotateY(-48deg) rotateX(90deg);}
+}   
