@@ -1,17 +1,20 @@
+@import "../_size.scss";
+@import "../_orthoPosition.scss";
+
 .ortho__sphere{    
-    transform: translateX(-15vw) translateY(-15vh) translateZ(0px);      
+    @include size(120px, 120px); //w/h  
+    @include orthoPosition(1216, 400, 0, 0, 0); //x/y/z/rx/ry/rz/t/l  
     background: #ddd;
-    border-radius: 50%;
-    height: 12vmin;
-    width: 12vmin;         
-    background: radial-gradient(circle at 40px 40px, #fff, #ddd); //light/shadow source direction
+    border-radius: 50%;       
+    background: radial-gradient(circle at 35% 35%, #fff, #ddd); //light/shadow source direction
 
     &:after{
         content:"";
         position: absolute;
         width: 100%;
         height: 100%;
+        bottom: -6.4vh;
         background:radial-gradient(circle at 50% 50%, rgba(0, 0, 0, .3%), rgba(0, 0, 0, .08%) 30%, rgba(255, 255, 255, 0%) 60%);
-        transform: rotateX(90deg) translateZ(-56px);
+        transform: rotateX(-90deg);
     }
 }  

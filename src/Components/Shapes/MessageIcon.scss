@@ -1,20 +1,21 @@
 @import "../_orthoPosition.scss";
+@import "../_size.scss";
 
 .ortho__messageIcon{
-    width: 12vw;
-    height: 12vw; //so dots center
-    @include orthoPosition(0, 0);//x/y/z/rz
+    @include size(8vw, 6.2vw);
+    @include orthoPosition(-50, -50, 0, 0, 0, 0, 50, 50); //x/y/z/rx/ry/rz/t/l  
     svg{fill: red;
         &:first-child{fill: green;} 
     }
 
-    .cylinder__dots{display: flex; align-items: center; justify-content: center; height: 59%;
+    .cylinder__dots{display: flex; align-items: center; justify-content: center; height: 80%;
         .ortho__cylinder{
-            transform: translateX(0) translateY(0) translateZ(10px);
-            position: relative;
-            height: 20px;
-            width: 20px;
+            @include size(14px, 14px);
+            @include orthoPosition(0, 0, 0.5, 0, 0, 0, 0, 0);
+            position: relative;           
             margin: 0 7px;
+            &:before{transform: translateZ(-0.25vw);} //first                     
+            &:after{transform: translateZ(-0.5vw);} //back depth
         }       
     }
 }

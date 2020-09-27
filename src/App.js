@@ -151,8 +151,6 @@ function App() {
       ease: "sine.out",
     });
 
-
-
     return () => { }
   }, []);
 

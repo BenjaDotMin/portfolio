@@ -1,27 +1,31 @@
-.ortho__text{  
-    width: 450px;               
-    font-size:15rem;             
-    display: block; //set as block, as there's no html content
-    transform: rotateY(-48deg);
+@import "../_orthoPosition.scss";
+@import "../_size.scss";
 
+.ortho__text{  
     &:before, &:after, .ortho__shadow:before, .ortho__shadow:after{content:"DAY 1"; position: absolute; color:#ddd; top:0; left:0;}
 
     &:before{transform: translateZ(0px); color:#f1f1f1;} //first
-    &:after{transform: translateZ(-19px);} //last
+    &:after{transform: translateZ(-1.6vw);} //last
 
+    //@include size(3vw, 1vw);
+    //display: block; //set as block, as there's no html content
+    @include orthoPosition(-50, -50, 0, 0, -48, 0, 50, 50); //x/y/z/rx/ry/rz/t/l  
+    font-size: 19rem;     
+    line-height: 1;      
+   
     .ortho__shadow{                                
         transform-style: preserve-3d;              
         
         //all shadows(from its Z'd pos)
-        &:before{transform: translateZ(-1px);}
-        &:after{transform: translateZ(-2px);}
+        &:before{transform: translateZ(-0.1vw);}
+        &:after{transform: translateZ(-0.4vw);}
 
         //push down back each shadow element
-        &:first-child{transform: translateZ(-1px);}
-        &:nth-child(2){transform: translateZ(-4px);}
-        &:nth-child(4){transform: translateZ(-7px);}
-        &:nth-child(5){transform: translateZ(-10px);}
-        &:nth-child(6){transform: translateZ(-13px);}
-        &:nth-child(7){transform: translateZ(-16px);}                    
+        &:first-child{transform: translateZ(-0.2vw);}
+        &:nth-child(2){transform: translateZ(-0.6vw);}
+        &:nth-child(4){transform: translateZ(-0.8vw);}
+        &:nth-child(5){transform: translateZ(-1vw);}
+        &:nth-child(6){transform: translateZ(-1.2vw);}
+        &:nth-child(7){transform: translateZ(-1.4vw);}                    
     }
 }     

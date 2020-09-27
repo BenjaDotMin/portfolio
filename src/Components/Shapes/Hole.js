@@ -1,10 +1,9 @@
 import React from 'react';
 import "./Hole.scss";
 
-function Hole({ donut, diamond, flat, rounded }) {
+function Hole({ equal }) {
     return (
-        <div className={`ortho__hole _3d ${donut ? "--donut" : ""} ${diamond ? "--diamond" : ""} ${flat ? "--flat" : ""} ${rounded ? "--rounded" : ""}`}>
-            <div className="ortho__shadow"></div>
+        <div className={`ortho__hole ${equal ? "--equal" : ""}`}>
             <div className="ortho__shadow"></div>
             <div className="ortho__shadow"></div>
             <div className="ortho__shadow"></div>

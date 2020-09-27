@@ -1,1 +1,1 @@
-@mixin orthoPosition($x:30, $y:30, $z:0, $rz:0){transform: rotateY(-48deg) rotateZ($rz+deg) translateX($x+vw) translateY($y+vh) translateZ($z+vw);}
+@mixin orthoPosition($x:-30, $y:-30, $z:0, $rx:0, $ry:-48, $rz:0, $t:0, $l:0){transform-style: preserve-3d; position:absolute; transform:translateX($x#{"%"}) translateY($y#{"%"}) translateZ($z+vw) rotateX($rx+deg) rotateY($ry+deg) rotateZ($rz+deg); top:$t#{"%"}; left:$l#{"%"};}

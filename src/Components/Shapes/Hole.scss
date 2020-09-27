@@ -1,49 +1,31 @@
+@import "../_orthoPosition.scss";
+@import "../_holeSize.scss";
+@import "../_size.scss";
+
 .ortho__hole{
-    height: 100px;
-    width: 100px;           
-    border: 30px solid #f1f1f1;  //thickness
-    transform: rotateY(-48deg);
-    
-    &:before, &:after, .ortho__shadow:after, .ortho__shadow:before{
-        content:"";     
-        height: 100%;
-        width: 100%;              
-        position: absolute;
-        border-radius: inherit;
-        border: inherit;
-        border-color: #ddd;               
-    }
 
-    &:before{transform: translateX(-30px) translateY(-30px) translateZ(-1px);} //first                     
-    &:after{transform: translateX(-30px) translateY(-30px) translateZ(-26px);} //bottom depth
+    &:before, &:after, .ortho__shadow, .ortho__shadow:after, .ortho__shadow:before{content:""; height: 100%; width: 100%; position: absolute; border-radius: inherit; border: inherit; border-color: #ddd;}
 
+    &:before{transform: translateZ(-0.1vw);} //first                     
+    &:after{transform: translateZ(-1.6vw);} //bottom depth
+
+
+    @include holeSize(10, 10, 2, green, 50); //w/h/border/color/radius
+    @include orthoPosition(-50, -50, 0, 0, -48, 0, 50, 50); //x/y/z/rx/ry/rz/t/l //rotate for diamond or flat rotate only X90
+  
     .ortho__shadow{ //middle sections if needed
-        height: 100px; //match parent height
-        width: 100px;  //match parent width   
-        border-radius: inherit; 
-        border: inherit;   
-        position: absolute; 
-        border-color: #ddd; 
-        transform-style: preserve-3d;  
 
         //all shadows(from its Z'd pos)
-        &:before{transform: translateX(-30px) translateY(-30px) translateZ(-1px);}                    
-        &:after{transform:  translateX(-30px) translateY(-30px)translateZ(-2px);} 
+        &:before{transform: translateZ(-0.1vw);}                    
+        &:after{transform: translateZ(-0.2vw);} 
 
-        //push down each shadow element
-        &:first-child {transform: translateX(-30px) translateY(-30px) translateZ(-2px);}  
-        &:nth-child(2){transform: translateX(-30px) translateY(-30px) translateZ(-5px);} 
-        &:nth-child(3){transform: translateX(-30px) translateY(-30px) translateZ(-8px);} 
-        &:nth-child(4){transform: translateX(-30px) translateY(-30px) translateZ(-11px);} 
-        &:nth-child(5){transform: translateX(-30px) translateY(-30px) translateZ(-14px);} 
-        &:nth-child(6){transform: translateX(-30px) translateY(-30px) translateZ(-17px);} 
-        &:nth-child(7){transform: translateX(-30px) translateY(-30px) translateZ(-20px);} 
-        &:nth-child(8){transform: translateX(-30px) translateY(-30px) translateZ(-23px);} 
-    } 
-            
-    &.--donut{border-radius: 50%;}
-
-    &.--diamond{transform: rotateY(-48deg) rotateZ(45deg); &.--rounded{border-radius: 10px;}}   
-    
-    &.--flat{transform: rotateY(-48deg) rotateX(90deg);}
+        // //push down each shadow element
+        &:first-child{transform: translateZ(-0.2vw); }  
+        &:nth-child(2){transform: translateZ(-0.4vw);} 
+        &:nth-child(3){transform: translateZ(-0.6vw)} 
+        &:nth-child(4){transform: translateZ(-0.8vw);} 
+        &:nth-child(5){transform: translateZ(-1vw);} 
+        &:nth-child(6){transform: translateZ(-1.2vw);} 
+        &:nth-child(7){transform: translateZ(-1.4vw);} 
+    }            
 }   

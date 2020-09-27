@@ -1,12 +1,10 @@
 @import "../_orthoPosition.scss";
+@import "../_size.scss";
 
-.ortho__cylinder{                 
-    border-radius: 50%;
-    width: 14vmin; //lock to one size shortest width or height
-    height: 14vmin;
-    background-color: #f1f1f1; 
-    
-    &:after, &:before, &.--flat .ortho__shadow, .ortho__shadow:after, .ortho__shadow:before{
+
+.ortho__cylinder{       
+
+    &:after, &:before, .ortho__shadow, .ortho__shadow:after, .ortho__shadow:before{
         content:"";
         height: 100%;
         width: 100%;
@@ -14,52 +12,48 @@
         border-radius: inherit;
         background-color: #ddd; 
     }
-
-    &:before{transform: translateZ(-10px);} //first                     
-    &:after{transform: translateZ(-40px);} //back depth
+ 
+    &:before{transform: translateZ(-0.5vw);} //first                     
+    &:after{transform: translateZ(-2vw);} //back depth
+    
+    @include size(14vmin, 14vmin); //w/h //lock to one size shortest width or height   
+    @include orthoPosition(900, 200); //x/y/z/rx/ry/rz/t/l  
+    border-radius: 50%;
+    background-color: #f1f1f1;   
     
     .ortho__shadow{ //middle sections if needed
         border-radius: inherit;  
-                      
+        transform-style: preserve-3d;
         &:first-child{                
-            &:before{transform: translateZ(-20px);} //first                     
-            &:after{transform: translateZ(-30px);} //back depth
+            &:before{transform: translateZ(-1vw);}                    
+            &:after{transform: translateZ(-1.5vw);} 
         }                               
     }
 
     &.--flat{
-        right: 600px !important;
-        transform:rotateY(-48deg) rotateX(90deg);
+        //rotate to 90
+        //@include orthoPosition(-20, -20, 0 , 90); //x/y/z/rx/ry/rz/t/l 
 
-        &:before{transform: translateZ(-1px);} //first                     
-        &:after{transform: translateZ(-26px);} //bottom depth
+        &:before{transform: translateZ(-0.1vh);} //first                     
+        &:after{transform: translateZ(-2.6vh);} //bottom depth
 
         .ortho__shadow{ //middle sections if needed 
             transform-style: preserve-3d;  
 
             //all shadows(from its Z'd pos)
-            &:before{transform: translateZ(-1px);}                    
-            &:after{transform: translateZ(-2px);} 
+            &:before{transform: translateZ(-0.1vh);}                    
+            &:after{transform: translateZ(-0.2vh);} 
 
             //push down each shadow element
-            &:first-child {transform: translateZ(-2px);}  
-            &:nth-child(2){transform: translateZ(-5px);} 
-            &:nth-child(3){transform: translateZ(-8px);} 
-            &:nth-child(4){transform: translateZ(-11px);} 
-            &:nth-child(5){transform: translateZ(-14px);} 
-            &:nth-child(6){transform: translateZ(-17px);} 
-            &:nth-child(7){transform: translateZ(-20px);} 
-            &:nth-child(8){transform: translateZ(-23px);} 
+            &:first-child {transform: translateZ(-0.2vh);}  
+            &:nth-child(2){transform: translateZ(-0.5vh);} 
+            &:nth-child(3){transform: translateZ(-0.8vh);} 
+            &:nth-child(4){transform: translateZ(-1.1vh);} 
+            &:nth-child(5){transform: translateZ(-1.4vh);} 
+            &:nth-child(6){transform: translateZ(-1.7vh);} 
+            &:nth-child(7){transform: translateZ(-2vh);} 
+            &:nth-child(8){transform: translateZ(-2.3vh);} 
         }
     }
-
-    @include orthoPosition(-44, -59); //x/y/z
+    .ortho__shadow{background-color: transparent;} //reset bg-color for element face
 }   
-
-
-.--parent{
-    .ortho__cylinder{ 
-        transform: rotateY(0) translateZ(38px);
-        .ortho__shadow{transform: none;}
-    }
-}

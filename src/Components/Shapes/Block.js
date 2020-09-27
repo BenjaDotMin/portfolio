@@ -1,14 +1,14 @@
 import React from 'react';
-import Image from "./Image";
+import BlockShape from "./BlockShape";
 import "./Block.scss";
 
 function Block({ parent, rounded }) {
     return (
-        <div className={`ortho__block _3d ${parent ? "--parent" : ""} ${rounded ? "--rounded" : ""}`}>
-            <div className={`ortho__sides ${rounded ? "back" : ""}`}></div>
+        <div className={`ortho__block ${rounded ? "--rounded" : ""}`}>
+            <div className={`ortho__sides`}></div>
 
             {parent ? (
-                <Image child />
+                <BlockShape tick />
             ) : ""}
 
         </div>

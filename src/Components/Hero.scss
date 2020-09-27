@@ -5,29 +5,7 @@
  
     .ortho{height:100%; position: relative; perspective: 4000px; perspective-origin: top left; //where we view from (if a box was below us, we would see the top, or see the bottom if it was above us)
           
-        //keep rotated children rotated 
-        ._3d{transform-style: preserve-3d; position: absolute; bottom:0; right:0;}
-
         svg{position: absolute; &:nth-child(2){transform: translateZ(-1px);} &:nth-child(3){transform: translateZ(-2px);} &:nth-child(4){transform: translateZ(-3px);} &:nth-child(5){transform: translateZ(-4px);} &:nth-child(6){transform: translateZ(-5px);} &:nth-child(7){transform: translateZ(-6px);} &:nth-child(8){transform: translateZ(-7px);} &:nth-child(9){transform: translateZ(-8px);} &:nth-child(10){transform: translateZ(-9px);} &:nth-child(11){transform: translateZ(-11px);} &:nth-child(12){transform: translateZ(-12px);} &:nth-child(13){transform: translateZ(-13px);} &:nth-child(14){transform: translateZ(-14px);} &:nth-child(15){transform: translateZ(-15px);} &:nth-child(16){transform: translateZ(-16px);} &:nth-child(17){transform: translateZ(-17px);} &:nth-child(18){transform: translateZ(-18px);} &:nth-child(19){transform: translateZ(-19px);} &:nth-child(20){transform: translateZ(-20px);}&:nth-child(21){transform: translateZ(-21px);}&:nth-child(22){transform: translateZ(-22px);}&:nth-child(23){transform: translateZ(-23px);}&:nth-child(24){transform: translateZ(-24px);}&:nth-child(25){transform: translateZ(-25px);}&:nth-child(26){transform: translateZ(-26px);}&:nth-child(27){transform: translateZ(-27px);}&:nth-child(28){transform: translateZ(-28px);}&:nth-child(29){transform: translateZ(-29px);}&:nth-child(30){transform: translateZ(-30px);}}
-
-        .ortho__heart{ 
-            width: 150px;
-            svg{                         
-                width: 12rem;
-                height: 12rem;          
-            }    
-        }           
-              
-        .--child{
-            width: 100%;
-            height: 100%; 
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transform: translateX(0) translateY(0) translateZ(30px);  
-    
-            svg{width:60%;}
-        }        
 
         .--clickable{cursor: pointer; transition: transform .2s;
             &:before, &:after, .ortho__shadow:before, .ortho__shadow:after, svg{transition: transform .2s;}
@@ -47,8 +25,7 @@
                 }            
             } 
             
-        }  
-        
+        }          
     }  
 }
 

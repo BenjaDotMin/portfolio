@@ -1,10 +1,10 @@
 import React from 'react';
 import "./Cylinder.scss";
-import Shape from './Shape';
+import Image from './Image';
 
 function Cylinder({ parent, clickable, flat }) {
     return (
-        <div className={`ortho__cylinder _3d ${parent ? "--parent" : ""} ${clickable ? "--clickable" : ""} ${flat ? "--flat" : ""} `}>
+        <div className={`ortho__cylinder ${clickable ? "--clickable" : ""} ${flat ? "--flat" : ""} `}>
             <div className="ortho__shadow"></div>
 
             {flat ? (
@@ -12,7 +12,7 @@ function Cylinder({ parent, clickable, flat }) {
             ) : ""}
 
             {parent ? (
-                <Shape tick child />
+                <Image />
             ) : ""}
         </div>
     )

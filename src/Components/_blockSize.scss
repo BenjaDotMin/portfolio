@@ -1,1 +1,10 @@
-@mixin blockSize($w:200,$h:200,$d:30){width:$w+vw;height:$h+vh;&:before{height:$d+vw;top:-$d+vw;}&:after{height:$d+vw;}.ortho__sides{&:before{width: $d+vw;left:-$d+vw;}&:after{width:$d+vw;right:-$d+vw;}}}
+@mixin blockSize($w:200,$h:200,$d:30){
+    width:$w+vw;height:$h+vh;
+    &:before{height:$d+vw;top:-$d+vw;}
+    &:after{height:$d+vw;}
+    
+    .ortho__sides{transform: translateZ(-$d+vw);
+        &:before{width: $d+vw;left:-$d+vw;}
+        &:after{width:$d+vw;right:-$d+vw;}
+    }
+}
