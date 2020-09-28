@@ -1,14 +1,6 @@
 import React from 'react';
 import "./Hero.scss";
-import Cloud from './Shapes/Cloud';
-import Block from './Shapes/Block';
-import Cylinder from './Shapes/Cylinder';
-import MessageIcon from './Shapes/MessageIcon';
-import Image from './Shapes/Image';
-import Sphere from './Shapes/Sphere';
-import Shape from './Shapes/BlockShape';
-import Hole from './Shapes/Hole';
-import Text from './Shapes/Text';
+import Window from "./Groups/Window/Window";
 function Hero() {
 
     return (
@@ -20,9 +12,7 @@ function Hero() {
 
             <div className="ortho">
 
-                <Cloud />
-                <Cloud />
-
+                <Window />
                 {/* stuff slowly floats? */}
                 {/* rolling balls around content, behind and infront? - if hero slides right */}
                 {/* cup, calender */}

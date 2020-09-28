@@ -1,5 +1,4 @@
 import React from 'react';
-import "./Heart.scss";
 
 function Heart() {
     return (

@@ -1,5 +1,4 @@
 import React from 'react';
-import "./Image.scss";
 
 function Image({ clickable }) {
     return (

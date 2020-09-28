@@ -1,13 +1,6 @@
-@import "../_size.scss";
-@import "../_orthoPosition.scss";
-
 .ortho__sphere{    
-    //@include size(120px, 120px); //w/h  
-    //@include orthoPosition(1216, 400, 0, 0, 0); //x/y/z/rx/ry/rz/t/l  
-    //background: #ddd;
     border-radius: 50%;       
-    background: radial-gradient(circle at 35% 35%, #fff, #ddd); //light/shadow source direction
-
+ 
     &:after{
         content:"";
         position: absolute;

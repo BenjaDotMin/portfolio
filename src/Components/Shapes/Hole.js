@@ -1,9 +1,9 @@
 import React from 'react';
 import "./Hole.scss";
 
-function Hole({ equal }) {
+function Hole() {
     return (
-        <div className={`ortho__hole ${equal ? "--equal" : ""}`}>
+        <div className={`ortho__hole`}>
             <div className="ortho__shadow"></div>
             <div className="ortho__shadow"></div>
             <div className="ortho__shadow"></div>

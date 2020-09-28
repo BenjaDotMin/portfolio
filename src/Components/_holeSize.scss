@@ -1,9 +1,5 @@
 @mixin holeSize($w:20, $h:20, $b:3, $c:black, $r:0){
-    width: $w+vw; height:$h+vh; border: $b+vw solid $c; border-radius: $r#{"%"};
-    &:before, &:after, .ortho__shadow, .ortho__shadow:after, .ortho__shadow:before{top:-$b+vw;left:-$b+vw;}
-    .ortho__shadow{width: $w+vw; height:$h+vh;}
-    &.--equal{
-        width: $w+vw; height:$w+vw;      
-        .ortho__shadow{width: $w+vw; height:$w+vw;}
-    }  
+    width: $w+vmin; height:$h+vmin; border: $b+vmin solid $c; border-radius: $r#{"%"};
+    &:before, &:after, .ortho__shadow, .ortho__shadow:after, .ortho__shadow:before{top:-$b+vmin;left:-$b+vmin;}
+    .ortho__shadow{width: $w+vmin; height:$h+vmin;}
 }

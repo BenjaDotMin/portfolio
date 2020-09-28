@@ -1,7 +1,4 @@
-@import "../_orthoPosition.scss";
-
 .ortho__cloudGroup{
-    //@include orthoPosition(50, 50, 0, 0, -48, 0, 50,20); //x/y/z/rx/ry/rz/t/l  
     .ortho__cloud, .ortho__cloudSides{position: relative; &:before, &:after{content: ""; border-radius: 100%; background-color:inherit; position: absolute; }}
     
     .ortho__cloud{position: absolute; left: 0; top:0; background-color: #ddd; width: 10.4vw; display: inline-flex; justify-content: center;
@@ -19,14 +16,6 @@
         &:nth-child(7){transform: translateZ(-1.2vw);}     
         &:nth-child(8){transform: translateZ(-1.4vw);}    
         &:nth-child(9){transform: translateZ(-1.6vw);}   
-    }    
-    
-    // &.floating__cloud{animation-name: floatAlong; animation-duration: 350s; animation-timing-function: linear; animation-iteration-count: infinite;
-    //     &.--fast{animation-duration: 100s;}
-    // }    
+    }  
 } 
 
-@keyframes floatAlong {
-    from {transform: rotateY(-48deg) translateY(15vh) translateX(104vw); }
-    to {transform: rotateY(-48deg) translateY(15vh) translateX(-12vw); } 
-}
