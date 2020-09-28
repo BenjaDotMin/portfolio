@@ -2,16 +2,16 @@
 @import "../_size.scss";
 
 .ortho__messageIcon{
-    @include size(8vw, 6.2vw);
-    @include orthoPosition(-50, -50, 0, 0, 0, 0, 50, 50); //x/y/z/rx/ry/rz/t/l  
+    //@include size(8vw, 6.2vw);
+    //@include orthoPosition(-50, -50, 0, 0, 0, 0, 50, 50); //x/y/z/rx/ry/rz/t/l  
     svg{fill: red;
         &:first-child{fill: green;} 
     }
 
     .cylinder__dots{display: flex; align-items: center; justify-content: center; height: 80%;
         .ortho__cylinder{
-            @include size(14px, 14px);
-            @include orthoPosition(0, 0, 0.5, 0, 0, 0, 0, 0);
+            //@include size(14px, 14px);
+            //@include orthoPosition(0, 0, 0.5, 0, 0, 0, 0, 0);
             position: relative;           
             margin: 0 7px;
             &:before{transform: translateZ(-0.25vw);} //first                     

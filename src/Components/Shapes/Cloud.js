@@ -12,6 +12,7 @@ function Cloud({ speed }) {
             <div className="ortho__cloud"><span className="ortho__cloudSides"></span></div>
             <div className="ortho__cloud"><span className="ortho__cloudSides"></span></div>
             <div className="ortho__cloud"><span className="ortho__cloudSides"></span></div>
+            <div className="ortho__cloud"><span className="ortho__cloudSides"></span></div>
         </div>
     )
 }

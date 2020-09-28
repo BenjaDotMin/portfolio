@@ -3,17 +3,17 @@
 
 .ortho__block{        
     &.--cross, &.--cross .ortho__block, &.--tick, &.--tick .ortho__block{ //itself and inner ortho__block
-        @include blockSize(3, 2, 2); //w/h/d
+        //@include blockSize(3, 2, 2); //w/h/d
         background-color:green;        
         &:before, &:after, .ortho__sides:before, .ortho__sides:after{background-color:red;}              
     }  
     &.--cross{  
-        @include orthoPosition(-50, -50, 1.5, 0, 0, 0, 50, 50); //x/y/z/rx/ry/rz/t/l   
+        //@include orthoPosition(-50, -50, 1.5, 0, 0, 0, 50, 50); //x/y/z/rx/ry/rz/t/l   
         //@include orthoPosition(-50, -50, 1.5, 0, 0, -45, 50, 50); //rotate for X    
         .ortho__block{transform:rotateZ(90deg);} //rotate inner block and remove rotationY          
     }    
     &.--tick{
-        @include orthoPosition(-50, -50, 1.5, 0, 0, -45, 50, 50); //x/y/z/rx/ry/rz/t/l  
+        //@include orthoPosition(-50, -50, 1.5, 0, 0, -45, 50, 50); //x/y/z/rx/ry/rz/t/l  
         .ortho__block{width: 25%; top: -96%; left: 0; transform: translateZ(0);}
     } 
 } 

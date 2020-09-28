@@ -1,6 +1,5 @@
 @import "../_orthoPosition.scss";
 @import "../_holeSize.scss";
-@import "../_size.scss";
 
 .ortho__hole{
 
@@ -10,8 +9,8 @@
     &:after{transform: translateZ(-1.6vw);} //bottom depth
 
 
-    @include holeSize(10, 10, 2, green, 50); //w/h/border/color/radius
-    @include orthoPosition(-50, -50, 0, 0, -48, 0, 50, 50); //x/y/z/rx/ry/rz/t/l //rotate for diamond or flat rotate only X90
+    //@include holeSize(10, 10, 2, green, 50); //w/h/border/color/radius
+    //@include orthoPosition(-50, -50, 0, 0, -48, 0, 50, 50); //x/y/z/rx/ry/rz/t/l //rotate for diamond or flat rotate only X90
   
     .ortho__shadow{ //middle sections if needed
 

@@ -2,8 +2,8 @@
 @import "../_size.scss";
 
 .ortho__heart{
-    @include size(12vmin, 12vmin); //w/h  
-    @include orthoPosition(-50, -50, 0, 0, 0, 0, 50, 50); //x/y/z/rx/ry/rz/t/l  
+    //@include size(12vmin, 12vmin); //w/h  
+    //@include orthoPosition(-50, -50, 0, 0, 0, 0, 50, 50); //x/y/z/rx/ry/rz/t/l  
     svg{fill: red;
         &:first-child{fill: green;} 
     }

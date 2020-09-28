@@ -16,8 +16,8 @@
     &:before{transform: translateZ(-0.5vw);} //first                     
     &:after{transform: translateZ(-2vw);} //back depth
     
-    @include size(14vmin, 14vmin); //w/h //lock to one size shortest width or height   
-    @include orthoPosition(900, 200); //x/y/z/rx/ry/rz/t/l  
+    //@include size(14vmin, 14vmin); //w/h //lock to one size shortest width or height   
+    //@include orthoPosition(900, 200); //x/y/z/rx/ry/rz/t/l  
     border-radius: 50%;
     background-color: #f1f1f1;   
     

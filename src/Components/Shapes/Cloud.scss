@@ -1,9 +1,7 @@
 @import "../_orthoPosition.scss";
-//@import "../_size.scss";
 
 .ortho__cloudGroup{
-    //@include size(14vmin, 7.3vmin); //w/h  
-    @include orthoPosition(); //x/y/z/rx/ry/rz/t/l  
+    //@include orthoPosition(50, 50, 0, 0, -48, 0, 50,20); //x/y/z/rx/ry/rz/t/l  
     .ortho__cloud, .ortho__cloudSides{position: relative; &:before, &:after{content: ""; border-radius: 100%; background-color:inherit; position: absolute; }}
     
     .ortho__cloud{position: absolute; left: 0; top:0; background-color: #ddd; width: 10.4vw; display: inline-flex; justify-content: center;
@@ -13,22 +11,22 @@
             &:after{right: -6.67vw; top: -3.3vw; height: 8vw; width: 8vw; }
         }   
         &:nth-child(1){background-color: #f1f1f1;}  
-        &:nth-child(2){transform: translateZ(-5px);}  
-        &:nth-child(3){transform: translateZ(-10px);}  
-        &:nth-child(4){transform: translateZ(-15px);}  
-        &:nth-child(5){transform: translateZ(-20px);}  
-        &:nth-child(6){transform: translateZ(-25px);}  
-        &:nth-child(7){transform: translateZ(-30px);}   
-        &:nth-child(8){transform: translateZ(-35px);}  
-        &:nth-child(9){transform: translateZ(-40px);}   
+        &:nth-child(2){transform: translateZ(-0.2vw);}  
+        &:nth-child(3){transform: translateZ(-0.4vw);}  
+        &:nth-child(4){transform: translateZ(-0.6vw);}  
+        &:nth-child(5){transform: translateZ(-0.8vw);}  
+        &:nth-child(6){transform: translateZ(-1vw);}  
+        &:nth-child(7){transform: translateZ(-1.2vw);}     
+        &:nth-child(8){transform: translateZ(-1.4vw);}    
+        &:nth-child(9){transform: translateZ(-1.6vw);}   
     }    
     
-    &.floating__cloud{animation-name: floatAlong; animation-duration: 350s; animation-timing-function: linear; animation-iteration-count: infinite;
-        &.--fast{animation-duration: 100s;}
-    }    
+    // &.floating__cloud{animation-name: floatAlong; animation-duration: 350s; animation-timing-function: linear; animation-iteration-count: infinite;
+    //     &.--fast{animation-duration: 100s;}
+    // }    
 } 
 
 @keyframes floatAlong {
     from {transform: rotateY(-48deg) translateY(15vh) translateX(104vw); }
     to {transform: rotateY(-48deg) translateY(15vh) translateX(-12vw); } 
-  }
+}

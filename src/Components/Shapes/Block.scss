@@ -15,8 +15,8 @@
     &:before{transform-origin: bottom; transform: rotateX(90deg); top: -100%; background: #f9f9f9;} //top
     &:after{transform-origin: top; transform: rotateX(-90deg); top: 100%;} //bottom       
   
-    @include blockSize(28, 22, 20); //w/h/d
-    @include orthoPosition(204, 160); //x/y/z/rx/ry/rz/t/l  
+    //@include blockSize(28, 22, 20); //w/h/d
+    //@include orthoPosition(204, 160); //x/y/z/rx/ry/rz/t/l  
 
     .ortho__sides{     
         width: 100%; height: 100%; background-color: #ddd; position: absolute; transform-style: preserve-3d;         
