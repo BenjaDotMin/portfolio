@@ -1,6 +1,5 @@
 import React from 'react';
 import "./Cylinder.scss";
-import Image from './Image';
 
 function Cylinder({ clickable, flat }) {
     return (

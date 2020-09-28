@@ -1,5 +1,4 @@
 import React from 'react';
-import BlockShape from "./BlockShape";
 import "./Block.scss";
 
 function Block({ rounded }) {

@@ -12,7 +12,7 @@ SwiperCore.use([Navigation]);
 
 function SideProjects() {
 
-    const [projects, setProjects] = useState([
+    const [projects] = useState([
         { name: "Meraki Travel", img: "https://source.unsplash.com/WLUHO9A_xik/900x480", link: "https://www.merakitravel.co.uk/" },
         { name: "88 Destinations", img: "https://source.unsplash.com/WLUHO9A_xik/900x480", link: "https://www.88destinations.com/" },
         { name: "VIP Ski", img: "https://source.unsplash.com/WLUHO9A_xik/900x480", link: "https://www.vip-chalets.com/" }
@@ -91,7 +91,7 @@ function SideProjects() {
                     }}>
                     {projects.map(project => (
                         <SwiperSlide key={project.name} >
-                            <a href={project.link} target="_blank">
+                            <a href={project.link} target="_blank" rel="noopener noreferrer">
                                 <img src={project.img} alt={project.name} />
                             </a>
                         </SwiperSlide>
