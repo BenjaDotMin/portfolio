@@ -10,18 +10,10 @@
         .--clickable{cursor: pointer; transition: transform .2s;
             &:before, &:after, .ortho__shadow:before, .ortho__shadow:after, svg{transition: transform .2s;}
             &:active{
-                //need specific pos...cylinder
-                //transform: rotateY(-48deg) translateX(-44vw) translateY(-59vh) translateZ(-20px);
                 &:before, &:after, .ortho__shadow:before, .ortho__shadow:after{transform: translateZ(-20px);}
-                
-                //need specific pos...message
-                //transform: rotateY(-48deg) translateX(-20vw) translateY(-30vh) translateZ(-20px);
-
-                //need specific pos...image
-                //transform: rotateY(-48deg) translateX(0vw) translateY(0vh) translateZ(-20px);
-                svg{                                    
-                    //&:first-child(1),&:nth-child(2),&:nth-child(3),&:nth-child(4),&:nth-child(5),&:nth-child(6),&:nth-child(7),&:nth-child(8),&:nth-child(9),&:nth-child(10),&:nth-child(11),&:nth-child(12),&:nth-child(13), &:nth-child(14){transform:rotateY(-48deg) translateX(-20vw) translateY(-30vh) translateZ(-20px);}
-                    &:nth-child(15),&:nth-child(16),&:nth-child(17),&:nth-child(18),&:nth-child(19),&:nth-child(20),&:nth-child(21),&:nth-child(22),&:nth-child(23),&:nth-child(24),&:nth-child(25),&:nth-child(26),&:nth-child(27), &:nth-child(28),&:nth-child(29),&:nth-child(30){transform: translateZ(-15px);}
+                svg{            
+                    &:first-child{transform: translateZ(-14px);}                        
+                    &:nth-child(2),&:nth-child(3),&:nth-child(4),&:nth-child(5),&:nth-child(6),&:nth-child(7),&:nth-child(8),&:nth-child(9),&:nth-child(10),&:nth-child(11),&:nth-child(12),&:nth-child(13), &:nth-child(14), &:nth-child(15){transform: translateZ(-15px);}
                 }            
             } 
             

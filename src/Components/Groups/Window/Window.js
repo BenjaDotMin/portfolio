@@ -1,11 +1,11 @@
 import React from 'react';
-import Cylinder from "../../Shapes/Cylinder";
+import Heart from "../../Shapes/Heart";
 import "./Window.scss";
 
 function Window() {
     return (
         <div className="window">
-            <Cylinder />
+            <Heart />
         </div>
     )
 }

@@ -4,13 +4,9 @@ import "./Hole.scss";
 function Hole() {
     return (
         <div className={`ortho__hole`}>
-            <div className="ortho__shadow"></div>
-            <div className="ortho__shadow"></div>
-            <div className="ortho__shadow"></div>
-            <div className="ortho__shadow"></div>
-            <div className="ortho__shadow"></div>
-            <div className="ortho__shadow"></div>
-            <div className="ortho__shadow"></div>
+            <>{Array.from({ length: 7 }, () =>
+                <div className="ortho__shadow"></div>
+            )}</>
         </div>
     )
 }

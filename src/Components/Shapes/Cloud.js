@@ -4,15 +4,9 @@ import "./Cloud.scss";
 function Cloud({ speed }) {
     return (
         <div className={`ortho__cloudGroup floating__cloud  ${speed ? speed : ""}`}>
-            <div className="ortho__cloud"><span className="ortho__cloudSides"></span></div>
-            <div className="ortho__cloud"><span className="ortho__cloudSides"></span></div>
-            <div className="ortho__cloud"><span className="ortho__cloudSides"></span></div>
-            <div className="ortho__cloud"><span className="ortho__cloudSides"></span></div>
-            <div className="ortho__cloud"><span className="ortho__cloudSides"></span></div>
-            <div className="ortho__cloud"><span className="ortho__cloudSides"></span></div>
-            <div className="ortho__cloud"><span className="ortho__cloudSides"></span></div>
-            <div className="ortho__cloud"><span className="ortho__cloudSides"></span></div>
-            <div className="ortho__cloud"><span className="ortho__cloudSides"></span></div>
+            {Array.from({ length: 7 }, () =>
+                <div className="ortho__cloud"><span className="ortho__cloudSides"></span></div>
+            )}
         </div>
     )
 }

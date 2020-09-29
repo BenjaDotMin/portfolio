@@ -7,7 +7,9 @@ function Cylinder({ clickable, flat }) {
             <div className="ortho__shadow"></div>
 
             {flat ? (
-                <><div className="ortho__shadow"></div><div className="ortho__shadow"></div><div className="ortho__shadow"></div><div className="ortho__shadow"></div><div className="ortho__shadow"></div><div className="ortho__shadow"></div><div className="ortho__shadow"></div></>
+                <>{Array.from({ length: 7 }, () =>
+                    <div className="ortho__shadow"></div>
+                )}</>
             ) : ""}
         </div>
     )

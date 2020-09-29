@@ -7,34 +7,11 @@
     @include size(60%, 40%);
     @include orthoPosition(0, 0, 0, 0, 0, 0, -48); //x/y/t/l/z/rx/ry/rz/ or no args
 
-    .ortho__block{
-        @include blockSize(40, 20, 6); //w/h/d
-        @include orthoPosition(-50, -50, 50, 50); //x/y/t/l/z/rx/ry/rz/ 
-
-        &.--cross, &.--cross .ortho__block{ //itself and inner ortho__block
-            background-color:green; &:before, &:after, .ortho__sides:before, .ortho__sides:after{background-color:red;}              
-        }  
-        &.--tick, &.--tick .ortho__block{ //itself and inner ortho__block
-            background-color:blue; &:before, &:after, .ortho__sides:before, .ortho__sides:after{background-color:green;}              
-        }  
-        &.--cross{  
-            @include blockSize(4, 1, 1); //w/h/d
-            @include orthoPosition(-50, -50, 50, 50); //x/y/t/l/z/rx/ry/rz/  //rotate for X                 
-        }    
-        &.--tick{
-            @include blockSize(4, 1, 1); //w/h/d
-            @include orthoPosition(-50, -50, 50, 50); //x/y/t/l/z/rx/ry/rz/ 
-        }                 
-        // &:after{ //nice shadows
-        //  box-shadow: 50px -50px 110px 0px rgba(0, 0, 0, 0.32);
-        //  box-shadow: 50px 0px 110px 30px rgba(0, 0, 0, 0.22);
-        //  box-shadow: 120px -120px 190px 20px rgba(0, 0, 0, 0.30);   
-        //  box-shadow: 3px 7px 36px 5px rgba(0, 0, 0, 0.12);           
-        // }  
+    .ortho__heart{
+        @include size(14vmin, 13.3vmin); //w/h  
+        @include orthoPosition(-50, -50, 50, 50); //x/y/t/l/z/rx/ry/rz/
+        svg{fill: red;
+            &:first-child{fill: green;} 
+        }
     }
-
-    .ortho__cylinder{
-        @include size(20vmin, 20vmin); //w/h //lock to one size shortest width or height   
-        @include orthoPosition(-50, -50, 50, 50); //x/y/t/l/z/rx/ry/rz/  //x/y/z/rx/ry/rz/t/l  
-    } 
 }
