@@ -5,7 +5,7 @@ import "./Window.scss";
 function Window() {
     return (
         <div className="window">
-            <Heart />
+            <Heart clickable />
         </div>
     )
 }

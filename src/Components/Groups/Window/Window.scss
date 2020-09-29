@@ -13,5 +13,11 @@
         svg{fill: red;
             &:first-child{fill: green;} 
         }
+
+        &.--active{
+            svg{
+                &:first-child{fill:blue;}
+            }
+        }
     }
 }
