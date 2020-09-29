@@ -4,20 +4,46 @@
 @import "../../_size.scss";
 
 .window{
-    @include size(60%, 40%);
-    @include orthoPosition(0, 0, 0, 0, 0, 0, -48); //x/y/t/l/z/rx/ry/rz/ or no args
+    @include size(80vmin, 45vmin);
+    @include orthoPosition(130, 70, 0, 0, 0, 0, -48); //x/y/t/l/z/rx/ry/rz/ or no args
 
-    .ortho__heart{
-        @include size(14vmin, 13.3vmin); //w/h  
-        @include orthoPosition(-50, -50, 50, 50); //x/y/t/l/z/rx/ry/rz/
-        svg{fill: red;
-            &:first-child{fill: green;} 
+    .ortho__hole{
+        @include holeSize(80, 45, 0.6, #f1f1f1, 0); //w/h/border/color/radius
+        @include orthoPosition(); //x/y/t/l/z/rx/ry/rz/ //rotate for diamond or flat rotate only X90
+    }
+
+    .ortho__block{
+        &:nth-child(2){
+            @include blockSize(80, 3.7, 3.2);
+            @include orthoPosition(); //x/y/t/l/z/rx/ry/rz/
+        }        
+        &:nth-child(6), &:nth-child(7), &:nth-child(8){ @include blockSize(3, 0.55, 1.2);}
+        &:nth-child(6){@include orthoPosition(2500, 940);}
+        &:nth-child(7){@include orthoPosition(2500, 1120);}
+        &:nth-child(8){@include orthoPosition(2500, 1320);}
+        &:nth-child(9){
+            @include blockSize(50, 23.7, 20);
+            @include orthoPosition(50, 70, 0, 0, 15); //x/y/t/l/z/rx/ry/rz/
         }
+    }
 
-        &.--active{
-            svg{
-                &:first-child{fill:blue;}
-            }
+    .ortho__cylinder{
+        @include size(1.5vmin, 1.5vmin);
+        &:before{transform:translateZ(-0.25vw);}
+        &:nth-child(3){
+            @include orthoPosition(87, 76, 0, 0, 0.5);
+            background-color: #ff3535;   
+            .ortho__shadow:before, .ortho__shadow:after, &:before, &:after{background-color:darken(#ff3535, 15);}   
+        }
+        &:nth-child(4){
+            @include orthoPosition(253, 76, 0, 0, 0.5);
+            background-color: #fdb140;            
+            .ortho__shadow:before, .ortho__shadow:after, &:before, &:after{background-color:darken(#fdb140, 15);}    
+        }
+        &:nth-child(5){
+            @include orthoPosition(432, 76, 0, 0, 0.5);
+            background-color:#34ce27;
+            .ortho__shadow:before, .ortho__shadow:after, &:before, &:after{background-color:darken(#34ce27, 15);}       
         }
     }
 }

@@ -1,11 +1,21 @@
 import React from 'react';
-import Heart from "../../Shapes/Heart";
+import Hole from "../../Shapes/Hole";
+import Block from "../../Shapes/Block";
+import Cylinder from "../../Shapes/Cylinder";
 import "./Window.scss";
 
 function Window() {
     return (
         <div className="window">
-            <Heart clickable />
+            <Hole />
+            <Block />
+            <Cylinder />
+            <Cylinder />
+            <Cylinder />
+            <Block />
+            <Block />
+            <Block />
+            <Block />
         </div>
     )
 }

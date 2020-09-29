@@ -51,6 +51,20 @@
         }
     }
 
+    .ortho__heart{
+        @include size(14vmin, 13.3vmin); //w/h  
+        @include orthoPosition(-50, -50, 50, 50); //x/y/t/l/z/rx/ry/rz/
+        svg{fill: red;
+            &:first-child{fill: green;} 
+        }
+
+        &.--active{
+            svg{
+                &:first-child{fill:blue;}
+            }
+        }
+    }
+
     .ortho__messageIcon{
         @include size(8vw, 6.2vw);
         @include orthoPosition(-50, -50, 50, 50); //x/y/t/l/z/rx/ry/rz/
