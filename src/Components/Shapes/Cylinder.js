@@ -1,13 +1,13 @@
 import React from 'react';
 import "./Cylinder.scss";
 
-function Cylinder({ clickable, flat }) {
+function Cylinder({ clickable, long }) {
     return (
-        <div className={`ortho__cylinder ${clickable ? "--clickable" : ""} ${flat ? "--flat" : ""} `}>
+        <div className={`ortho__cylinder ${clickable ? "--clickable" : ""} ${long ? "--long" : ""} `}>
             <div className="ortho__shadow"></div>
 
-            {flat ? (
-                <>{Array.from({ length: 7 }, () =>
+            {long ? (
+                <>{Array.from({ length: 6 }, () =>
                     <div className="ortho__shadow"></div>
                 )}</>
             ) : ""}

@@ -1,4 +1,6 @@
 .ortho__cylinder{       
+    border-radius: 50%;
+    background-color: #f1f1f1; 
 
     &:after, &:before, .ortho__shadow, .ortho__shadow:after, .ortho__shadow:before{
         content:"";
@@ -7,44 +9,10 @@
         position: absolute;
         border-radius: inherit;
         background-color: #ddd; 
-    }
- 
-    &:before{transform: translateZ(-0.5vw);} //first                     
-    &:after{transform: translateZ(-2vw);} //back depth
-    
-    border-radius: 50%;
-    background-color: #f1f1f1;   
+    }    
     
     .ortho__shadow{ //middle sections if needed
         border-radius: inherit;  
-        transform-style: preserve-3d;
-        &:first-child{                
-            &:before{transform: translateZ(-1vw);}                    
-            &:after{transform: translateZ(-1.5vw);} 
-        }                               
+        transform-style: preserve-3d;                              
     }
-
-    &.--flat{
-        &:before{transform: translateZ(-0.1vh);} //first                     
-        &:after{transform: translateZ(-2.6vh);} //bottom depth
-
-        .ortho__shadow{ //middle sections if needed 
-            transform-style: preserve-3d;  
-
-            //all shadows(from its Z'd pos)
-            &:before{transform: translateZ(-0.1vh);}                    
-            &:after{transform: translateZ(-0.2vh);} 
-
-            //push down each shadow element
-            &:first-child {transform: translateZ(-0.2vh);}  
-            &:nth-child(2){transform: translateZ(-0.5vh);} 
-            &:nth-child(3){transform: translateZ(-0.8vh);} 
-            &:nth-child(4){transform: translateZ(-1.1vh);} 
-            &:nth-child(5){transform: translateZ(-1.4vh);} 
-            &:nth-child(6){transform: translateZ(-1.7vh);} 
-            &:nth-child(7){transform: translateZ(-2vh);} 
-            &:nth-child(8){transform: translateZ(-2.3vh);} 
-        }
-    }
-    .ortho__shadow{background-color: transparent;} //reset bg-color for element face
 }   

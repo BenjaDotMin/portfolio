@@ -2,48 +2,42 @@
 @import "../../_holeSize.scss";
 @import "../../_blockSize.scss";
 @import "../../_size.scss";
+@import "../../_cylinderSize.scss";
 
 .window{
     @include size(80vmin, 45vmin);
     @include orthoPosition(130, 70, 0, 0, 0, 0, -48); //x/y/t/l/z/rx/ry/rz/ or no args
 
     .ortho__hole{
-        @include holeSize(80, 45, 0.6, #f1f1f1, 0); //w/h/border/color/radius
+        @include holeSize(80, 48, 2, 0.8, #f1f1f1, 0); //w/h/d/thickness/color/radius
         @include orthoPosition(); //x/y/t/l/z/rx/ry/rz/ //rotate for diamond or flat rotate only X90
     }
 
     .ortho__block{
-        &:nth-child(2){
-            @include blockSize(80, 3.7, 3.2);
-            @include orthoPosition(); //x/y/t/l/z/rx/ry/rz/
-        }        
-        &:nth-child(6), &:nth-child(7), &:nth-child(8){ @include blockSize(3, 0.55, 1.2);}
+        &:nth-child(2){@include blockSize(80, 3.7, 2); @include orthoPosition();}        
+        &:nth-child(6),&:nth-child(7), &:nth-child(8){@include blockSize(3, 0.55, 1.2);}
         &:nth-child(6){@include orthoPosition(2500, 940);}
         &:nth-child(7){@include orthoPosition(2500, 1120);}
         &:nth-child(8){@include orthoPosition(2500, 1320);}
-        &:nth-child(9){
-            @include blockSize(50, 23.7, 20);
-            @include orthoPosition(50, 70, 0, 0, 15); //x/y/t/l/z/rx/ry/rz/
-        }
+        &:nth-child(9){@include blockSize(50, 23.7, 20); @include orthoPosition(50, 70, 0, 0, 15);}
     }
 
     .ortho__cylinder{
-        @include size(1.5vmin, 1.5vmin);
-        &:before{transform:translateZ(-0.25vw);}
+        @include cylinderSize(0.8, 0.8 ,1);
         &:nth-child(3){
-            @include orthoPosition(87, 76, 0, 0, 0.5);
+            @include orthoPosition(87, 62, 0, 0, 0.7);
             background-color: #ff3535;   
-            .ortho__shadow:before, .ortho__shadow:after, &:before, &:after{background-color:darken(#ff3535, 15);}   
+            .ortho__shadow, .ortho__shadow:before, .ortho__shadow:after, &:before, &:after{background-color:darken(#ff3535, 15);}   
         }
         &:nth-child(4){
-            @include orthoPosition(253, 76, 0, 0, 0.5);
+            @include orthoPosition(253, 62, 0, 0, 0.7);
             background-color: #fdb140;            
-            .ortho__shadow:before, .ortho__shadow:after, &:before, &:after{background-color:darken(#fdb140, 15);}    
+            .ortho__shadow, .ortho__shadow:before, .ortho__shadow:after, &:before, &:after{background-color:darken(#fdb140, 15);}    
         }
         &:nth-child(5){
-            @include orthoPosition(432, 76, 0, 0, 0.5);
+            @include orthoPosition(432, 62, 0, 0, 0.7);
             background-color:#34ce27;
-            .ortho__shadow:before, .ortho__shadow:after, &:before, &:after{background-color:darken(#34ce27, 15);}       
+            .ortho__shadow, .ortho__shadow:before, .ortho__shadow:after, &:before, &:after{background-color:darken(#34ce27, 15);}       
         }
     }
 }

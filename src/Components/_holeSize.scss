@@ -1,5 +1,18 @@
-@mixin holeSize($w:20, $h:20, $b:3, $c:black, $r:0){
+@mixin holeSize($w:20, $h:20, $d:2, $b:3, $c:black, $r:0){
     width: $w+vmin; height:$h+vmin; border: $b+vmin solid $c; border-radius: $r#{"%"};
-    &:before, &:after, .ortho__shadow, .ortho__shadow:after, .ortho__shadow:before{top:-$b+vmin;left:-$b+vmin;}
-    .ortho__shadow{width: $w+vmin; height:$h+vmin;}
+    .ortho__shadow{width: $w+vmin; height:$h+vmin;}  
+    
+    &:before, &:after{width: $w+vmin; height:$d+vmin; left:-$b+vmin;}
+
+    &:before{transform: translateY(-$b+vmin) rotateX(-90deg);} //top
+    &:after{transform: translateY($b+vmin) rotateX(-90deg);} //bottom
+
+    .ortho__sides{width: $w+vmin; height: $h+vmin; transform: translateY(-$b+vmin) translateX(-$b+vmin) translateZ(-$d+vmin);}
+
+    .ortho__inner{&:before, &:after{height: $d+vmin;}}
+
+    .ortho__innerSides, .ortho__sides{
+        &:before, &:after{width: $d+vmin;}
+        &:before{left: -$d+vmin;}
+    }
 }

@@ -11,7 +11,6 @@ function Hero() {
             </div>
 
             <div className="ortho">
-
                 <Window />
                 {/* stuff slowly floats? */}
                 {/* rolling balls around content, behind and infront? - if hero slides right */}
@@ -31,11 +30,8 @@ function Hero() {
                 {/* typing message icon (animated?) */}
                 {/* share icon */}
                 {/* drag to rotate the translates? */}
-
-
             </div>
-
-        </div >
+        </div>
     )
 }
 

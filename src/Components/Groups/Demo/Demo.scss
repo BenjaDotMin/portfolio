@@ -9,11 +9,11 @@
         
     .ortho__cylinder{
         @include size(20vmin, 20vmin); //w/h //lock to one size shortest width or height   
-        @include orthoPosition(-50, -50, 50, 50); //x/y/z/rx/ry/rz/t/l  
+        @include orthoPosition(-50, -50, 50, 50); //x/y//t/lz/rx/ry/rz  
     }   
     
     .ortho__hole{
-       @include holeSize(10, 10, 2, green, 50); //w/h/border/color/radius
+       @include holeSize(10, 10, 0, 2, green, 50); //w/h/d/thickness/color/radius
        @include orthoPosition(-50, -50, 50, 50); //x/y/t/l/z/rx/ry/rz/ //rotate for diamond or flat rotate only X90
     }  
 
