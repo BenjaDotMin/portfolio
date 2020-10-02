@@ -1,18 +1,37 @@
-.ortho__cylinder{       
-    border-radius: 50%;
-    background-color: #f1f1f1; 
+.ortho__cylinder, .ortho__shadow, .ortho__shadowInner{&:before, &:after{content:""; position: absolute; height:100%; width: 100%;}}
+.ortho__cylinder, .ortho__shadow, .ortho__sides, .ortho__shadowInner, .ortho__cylinder, .ortho__cover{position: absolute;}
+.ortho__cylinder, .ortho__shadow{&:after{border-radius: 50%;}}
 
-    &:after, &:before, .ortho__shadow, .ortho__shadow:after, .ortho__shadow:before{
-        content:"";
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        border-radius: inherit;
-        background-color: #ddd; 
-    }    
+.ortho__cylinder{    
+    .ortho__shadow, .ortho__shadowInner{background-color: #ddd; &:before, &:after{background-color:inherit;}}
+    .ortho__cover, .ortho__sides{background-color: white; &:before, &:after{background-color:inherit;}} 
+    .ortho__shadow, .ortho__shadowInner, .ortho__cover, .ortho__sides{transform-style: preserve-3d;}
+    .ortho__cover, .ortho__sides{&:before, &:after{content: ""; position: absolute;}}
+         
+    .ortho__cover{
+        &:before, &:after{width: 100%; transform-origin: bottom; transform:rotateX(90deg);}
+        &:before{transform:translateY(0.7px) rotateX(90deg);}      
+        &:after{transform:translateY(-0.7px) rotateX(90deg); bottom: 1.7px;}   
+        .ortho__sides{height: 100%; width: 100%;
+            &:before, &:after{height: 100%; transform: rotateY(-90deg); transform-origin: left;}
+            &:before{left: 0;}
+        } 
+    }   
+
+    .ortho__shadow{
+        transition: 0.2s;
+        transform-origin: left;    
+        &:before{transform: rotateX(90deg);}    
+        &:after{transform: rotateY(-90deg); background-color: #f1f1f1;} //front       
+
+        .ortho__shadowInner{height: 100%; width: 100%;transform: rotateX(45deg);
+            &:before{transform: rotateX(90deg);}   
+            &:after{transform: rotateX(22.5deg);}
+            .ortho__shadowInner{transform: rotateX(-22.5deg);
+                &:after{transform: rotateX(-45deg);}   
+            }
+        }
+    }   
     
-    .ortho__shadow{ //middle sections if needed
-        border-radius: inherit;  
-        transform-style: preserve-3d;                              
-    }
-}   
+    &:after{background-color: #ddd;}
+}

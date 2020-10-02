@@ -1,16 +1,18 @@
 import React from 'react';
 import "./Cylinder.scss";
 
-function Cylinder({ clickable, long }) {
+function Cylinder({ clickable, extra }) {
     return (
-        <div className={`ortho__cylinder ${clickable ? "--clickable" : ""} ${long ? "--long" : ""} `}>
-            <div className="ortho__shadow"></div>
+        <div className={`ortho__cylinder ${clickable ? "--clickable" : ""}`}>
+            <div className="ortho__shadow">
+                {extra ? (<div className="ortho__shadowInner">
+                    <div className="ortho__shadowInner"></div>
+                </div>) : ""}
+            </div>
 
-            {long ? (
-                <>{Array.from({ length: 6 }, () =>
-                    <div className="ortho__shadow"></div>
-                )}</>
-            ) : ""}
+            <div className="ortho__cover">
+                <div className="ortho__sides"></div>
+            </div>
         </div>
     )
 }

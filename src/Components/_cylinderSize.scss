@@ -1,30 +1,33 @@
-@mixin cylinderSize($w:50%, $h:50%, $d:0){
-    width:$w+vw; height: $h+vw;  
+@mixin cylinderSize($w:20, $h:20, $d:5){    
+    width: $w+vmin;
+    height: $h+vmin;   
 
-    &:before{transform: translateZ(-$d/10+vw);}          
-    &:after{transform: translateZ(-$d/1.8+vw);} 
+    &:after{transform: translateZ(-$d+vmin);}  
+ 
+    .ortho__cover{       
+        width: $w+0.2vmin;
+        height: $h+0.2vmin;       
+        transform: translateX(-0.1vmin) translateY(-0.1vmin) translateZ(-$d+vmin);
 
-    .ortho__shadow{
-        transform: translateZ(-$d/5+vw); 
-        &:before{transform: translateZ(-$d/8+vw);}   
-        &:after{transform: translateZ(-$d/4.2+vw);}                              
+        &:before, &:after{height:$d/2+vmin;}
+        &:before{top: -$d/2+vmin;}        
+
+        .ortho__sides{           
+            transform: translateZ(-$d/2+vmin);
+            &:before, &:after{width: $d/2+vmin;}
+            &:after{left: $w+0.2vmin;}
+        }
+    }       
+
+    .ortho__shadow{    
+        width: $w/2+vmin;     
+        height: $h+vmin;       
+        left: $w/2+vmin;       
+        transform: translateZ(-$d+vmin) rotateY(-90deg);
+        &:after{width: $w+vmin; height: $h+vmin;}
     }
 
-    &.--long{
-        &:before{transform: translateZ(-$d/25+vw);} //first 
-        &:after{transform: translateZ(-$d/1.048+vw)} //back depth 
-
-        .ortho__shadow{ //all shadows(from its Z'd pos)
-            &:before{transform: translateZ(-$d/25+vw);}   
-            &:after{transform: translateZ(-$d/12.5+vw);} 
-            //each element
-            &:first-child{transform: translateZ(-$d/12.5+vw);}  
-            &:nth-child(2){transform: translateZ(-$d/5+vw);}
-            &:nth-child(3){transform: translateZ(-$d/3.1+vw);} 
-            &:nth-child(4){transform: translateZ(-$d/2.24+vw);} 
-            &:nth-child(5){transform: translateZ(-$d/1.75+vw);} 
-            &:nth-child(6){transform: translateZ(-$d/1.43+vw);} 
-            &:nth-child(7){transform: translateZ(-$d/1.21+vw);} 
-        }
+    &:active{ 
+        .ortho__shadow{transform: translateZ(-$d/2*3+vmin) rotateY(-90deg);}
     }
 }
