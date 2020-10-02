@@ -10,6 +10,7 @@ function Cylinder({ clickable }) {
                     <div className="ortho__shadowInner"></div>
                     <div className="ortho__shadowInner"></div>
                     <div className="ortho__shadowInner"></div>
+                    <div className="ortho__shadowInner"></div>
                 </div>
             </div>
 
