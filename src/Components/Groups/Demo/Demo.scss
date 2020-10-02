@@ -2,24 +2,28 @@
 @import "../../_holeSize.scss";
 @import "../../_blockSize.scss";
 @import "../../_size.scss";
+@import "../../_cylinderSize.scss";
 
 .demo{
-    @include size(60%, 40%);    
+    @include size(20%, 40%);    
     @include orthoPosition(0, 0, 0, 0, 0, 0, -48); //x/y/t/l/z/rx/ry/rz/ or no args
         
     .ortho__cylinder{
-        @include size(20vmin, 20vmin); //w/h //lock to one size shortest width or height   
-        @include orthoPosition(-50, -50, 50, 50); //x/y//t/lz/rx/ry/rz  
+        @include cylinderSize(); //w/d/click depth
+        @include orthoPosition(250, -50, 50, 50); //x/y//t/lz/rx/ry/rz  
+        .ortho__shadow{&:after{background-color:#ff3535;}} //until var setup, of front
+        .ortho__shadow, &:after{background-color:darken(#ff3535, 15);} //until var setup, of this   
+        .ortho__cover, .ortho__sides{background-color:white;} //until var setup, of cover     
     }   
     
     .ortho__hole{
-       @include holeSize(10, 10, 0, 2, green, 50); //w/h/d/thickness/color/radius
-       @include orthoPosition(-50, -50, 50, 50); //x/y/t/l/z/rx/ry/rz/ //rotate for diamond or flat rotate only X90
+       @include holeSize(10, 10, 2, 2, green, 0); //w/h/d/thickness/color/radius
+       @include orthoPosition(50, 0, 90, 0); //x/y/t/l/z/rx/ry/rz/ //rotate for diamond or flat rotate only X90
     }  
 
     .ortho__block{
         @include blockSize(40, 20, 6); //w/h/d
-        @include orthoPosition(-50, -50, 50, 50); //x/y/t/l/z/rx/ry/rz/  
+        @include orthoPosition(320, 100, 50, 50); //x/y/t/l/z/rx/ry/rz/  
 
         &.--cross, &.--cross .ortho__block{ //itself and inner ortho__block
             background-color:green; &:before, &:after, .ortho__sides:before, .ortho__sides:after{background-color:red;}              
@@ -29,7 +33,7 @@
         }  
         &.--cross{  
             @include blockSize(4, 1, 1); //w/h/d
-            @include orthoPosition(-50, -50, 50, 50); //x/y/t/l/z/rx/ry/rz/ //rotate for X      
+            @include orthoPosition(2150, 50, 50, 50); //x/y/t/l/z/rx/ry/rz/ //rotate for X      
         }    
         &.--tick{
             @include blockSize(4, 1, 1); //w/h/d
@@ -45,7 +49,7 @@
 
     .ortho__image{
         @include size(14vmin, 7.3vmin); //w/h  
-        @include orthoPosition(-50, -50, 50, 50); //x/y/t/l/z/rx/ry/rz/
+        @include orthoPosition(250, 650, 50, 50); //x/y/t/l/z/rx/ry/rz/
         svg{fill: red;
             &:first-child{fill: green;} 
         }
@@ -67,15 +71,18 @@
 
     .ortho__messageIcon{
         @include size(8vw, 6.2vw);
-        @include orthoPosition(-50, -50, 50, 50); //x/y/t/l/z/rx/ry/rz/
+        @include orthoPosition(800, -50, 50, 50); //x/y/t/l/z/rx/ry/rz/
         svg{fill: red;
             &:first-child{fill: green;} 
         }
     
         .cylinder__dots{
             .ortho__cylinder{
-                @include size(14px, 14px);
-                @include orthoPosition(0, 0, 0, 0, 0.5); //x/y/t/l/z/rx/ry/rz/
+                @include cylinderSize(2, 0.6); //w/d/click depth
+                @include orthoPosition(); //x/y/t/l/z/rx/ry/rz/
+                .ortho__shadow{&:after{background-color:#ff3535;}} //until var setup, of front
+                .ortho__shadow, &:after{background-color:darken(#ff3535, 15);} //until var setup, of this   
+                .ortho__cover, .ortho__sides{background-color:#f1f1f1;} //until var setup, of cover     
                 margin: 0 7px;
             }       
         }
@@ -88,14 +95,14 @@
 
         @include size(3vw, 1vw);
         //display: block; //set as block, as there's no html content
-        @include orthoPosition(-50, -50, 50, 50); //x/y/t/l/z/rx/ry/rz/ 
-        font-size: 19rem;     
+        @include orthoPosition(250, 950, 50, 50); //x/y/t/l/z/rx/ry/rz/ 
+        font-size: 12rem;     
         line-height: 1;  
     }
 
     .ortho__cloudGroup{     
         //cloud group should not have a parent
-        @include orthoPosition(-50, -50, 50, 50); //x/y/t/l/z/rx/ry/rz/
+        @include orthoPosition(0, 0, 150, 250); //x/y/t/l/z/rx/ry/rz/
         // &.floating__cloud{animation-name: floatAlong; animation-duration: 350s; animation-timing-function: linear; animation-iteration-count: infinite;
         //     &.--fast{animation-duration: 100s;}
         // }   

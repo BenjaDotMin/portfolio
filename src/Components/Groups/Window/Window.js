@@ -7,15 +7,15 @@ import "./Window.scss";
 function Window() {
     return (
         <div className="window">
-            {/* <Hole />
-            <Block /> */}
-            <Cylinder extra />
-            {/* <Cylinder />
-            <Cylinder />
+            <Hole />
+            <Block />
+            <Cylinder clickable />
+            <Cylinder clickable />
+            <Cylinder clickable />
             <Block />
             <Block />
             <Block />
-            <Block /> */}
+            <Block />
         </div>
     )
 }

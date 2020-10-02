@@ -1,9 +1,5 @@
 .ortho__messageIcon{
     .cylinder__dots{display: flex; align-items: center; justify-content: center; height: 80%;
-        .ortho__cylinder{
-            position: relative !important;           
-            &:before{transform: translateZ(-0.25vw);} //first                     
-            &:after{transform: translateZ(-0.5vw);} //back depth
-        }       
+        .ortho__cylinder{position: relative !important;}       
     }
 }

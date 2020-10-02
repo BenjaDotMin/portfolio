@@ -23,22 +23,24 @@
     }
 
     .ortho__cylinder{
-        @include cylinderSize(40, 40, 20); //w/h/d
-        @include orthoPosition(0, 0, 0, 0, 0, 0, 0, 0);
-        // &:nth-child(3){
-        //     @include orthoPosition(87, 62, 0, 0, 0.7);
-        //     background-color: #ff3535;   
-        //     .ortho__shadow, .ortho__shadow:before, .ortho__shadow:after, &:before, &:after{background-color:darken(#ff3535, 15);}   
-        // }
-        // &:nth-child(4){
-        //     @include orthoPosition(253, 62, 0, 0, 0.7);
-        //     background-color: #fdb140;            
-        //     .ortho__shadow, .ortho__shadow:before, .ortho__shadow:after, &:before, &:after{background-color:darken(#fdb140, 15);}    
-        // }
-        // &:nth-child(5){
-        //     @include orthoPosition(432, 62, 0, 0, 0.7);
-        //     background-color:#34ce27;
-        //     .ortho__shadow, .ortho__shadow:before, .ortho__shadow:after, &:before, &:after{background-color:darken(#34ce27, 15);}       
-        // }
+        @include cylinderSize(1.8, 0.6); //w/d/click depth
+        .ortho__cover, .ortho__sides{background-color:#f1f1f1;} //until var setup, of cover 
+
+        &:nth-child(3){
+            @include orthoPosition(87, 62);
+            .ortho__shadow{&:after{background-color:#ff3535;}} //until var setup, of front
+            .ortho__shadow, &:after{background-color:darken(#ff3535, 15);} //until var setup, of this            
+               
+        }
+        &:nth-child(4){
+            @include orthoPosition(253, 62);        
+            .ortho__shadow{&:after{background-color:#fdb140;}} //until var setup, of front
+            .ortho__shadow, &:after{background-color:darken(#fdb140, 15);} //until var setup, of this            
+        }
+        &:nth-child(5){
+            @include orthoPosition(432, 62);
+            .ortho__shadow{&:after{background-color:#34ce27;}} //until var setup, of front
+            .ortho__shadow, &:after{background-color:darken(#34ce27, 15);} //until var setup, of this            
+        }
     }
 }

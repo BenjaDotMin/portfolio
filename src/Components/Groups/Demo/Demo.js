@@ -14,9 +14,8 @@ function Window() {
     return (
         <div className="demo">
             <Hole />
-            <Cylinder />
+            <Cylinder clickable />
             <Block />
-
             <BlockShape cross />
             <Image />
             <MessageIcon />

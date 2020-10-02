@@ -1,33 +1,35 @@
-@mixin cylinderSize($w:20, $h:20, $d:5){    
-    width: $w+vmin;
-    height: $h+vmin;   
+@mixin cylinderSize($w:20, $d:4, $cd:1.6){   
+    width: $w+vmin; 
+    height:$w+vmin;     
 
-    &:after{transform: translateZ(-$d+vmin);}  
- 
+    .ortho__shadow{         
+        height: $w+vmin;
+        width: $d+vmin;
+        left: $w/2+vmin;      
+        &:after{
+            width: $w+vmin;
+            height: $w+vmin;
+            transform: translateX(-$w/2+0.1vmin) rotateY(-90deg);              
+        }
+    }
+
     .ortho__cover{       
-        width: $w+0.2vmin;
-        height: $h+0.2vmin;       
-        transform: translateX(-0.1vmin) translateY(-0.1vmin) translateZ(-$d+vmin);
-
-        &:before, &:after{height:$d/2+vmin;}
-        &:before{top: -$d/2+vmin;}        
+        width: $w+0.4vmin; 
+        height:$w+0.4vmin;         
+        transform: translateX(-0.2vmin) translateY(-0.2vmin);
+        &:before, &:after{height:$d/$cd+vmin;}
+        &:before{top: -$d/$cd+vmin;}
 
         .ortho__sides{           
-            transform: translateZ(-$d/2+vmin);
-            &:before, &:after{width: $d/2+vmin;}
-            &:after{left: $w+0.2vmin;}
+            transform: translateZ(-$d/$cd+vmin);
+            &:before, &:after{width: $d/$cd+0.1vmin;}
+            &:after{left: $w+0.4vmin;}
         }
-    }       
+    }  
 
-    .ortho__shadow{    
-        width: $w/2+vmin;     
-        height: $h+vmin;       
-        left: $w/2+vmin;       
-        transform: translateZ(-$d+vmin) rotateY(-90deg);
-        &:after{width: $w+vmin; height: $h+vmin;}
-    }
-
-    &:active{ 
-        .ortho__shadow{transform: translateZ(-$d/2*3+vmin) rotateY(-90deg);}
-    }
+    &.--clickable{
+        &:active{ 
+            .ortho__shadow{transform: translateZ(-$d/$cd+vmin) rotateY(-90deg);}
+        }
+    }    
 }
