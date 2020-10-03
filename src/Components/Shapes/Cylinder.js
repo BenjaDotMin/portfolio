@@ -1,17 +1,19 @@
 import React from 'react';
 import "./Cylinder.scss";
 
-function Cylinder({ clickable }) {
+function Cylinder({ clickable, detail }) {
     return (
         <div className={`ortho__cylinder ${clickable ? "--clickable" : ""}`}>
 
             <div className="ortho__shadow">
-                <div className="ortho__shadowInner">
-                    <div className="ortho__shadowInner"></div>
-                    <div className="ortho__shadowInner"></div>
-                    <div className="ortho__shadowInner"></div>
-                    <div className="ortho__shadowInner"></div>
-                </div>
+                {detail ? (<>
+                    <div className="ortho__shadowInner">
+                        <div className="ortho__shadowInner"></div>
+                        <div className="ortho__shadowInner"></div>
+                        <div className="ortho__shadowInner"></div>
+                        <div className="ortho__shadowInner"></div>
+                    </div>
+                </>) : ""}
             </div>
 
             {clickable ? (
