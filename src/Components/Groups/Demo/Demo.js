@@ -14,6 +14,7 @@ function Demo() {
     return (
         <div className="demo">
             <Hole />
+            <Hole rounded />
             <Cylinder detail clickable />
             <Block />
             <BlockShape cross />

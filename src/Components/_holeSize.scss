@@ -1,5 +1,8 @@
 @mixin holeSize($w:20, $h:20, $d:2, $b:3, $c:black, $r:0){
-    width: $w+vmin; height:$h+vmin; border: $b+vmin solid $c; border-radius: $r#{"%"};
+    width: $w+vmin;
+    height:$h+vmin;
+    border: $b+vmin solid $c;
+
     .ortho__shadow{width: $w+vmin; height:$h+vmin;}  
     
     &:before, &:after{width: $w+vmin; height:$d+vmin; left:-$b+vmin;}
@@ -16,5 +19,33 @@
     .ortho__innerSides, .ortho__sides{
         &:before, &:after{width: $d+vmin;}
         &:before{left: -$d+vmin;}
+    }
+
+    &.--rounded{    
+        &, .ortho__inner, .ortho__sides, .ortho__innerSides{
+            border-radius: $r#{"%"};
+            &:before, &:after{border-radius: inherit; background-color: transparent; border:$b+vmin solid darken($c, 8); left: -$b+vmin !important; height: 100%; width: 100%;}
+        }
+       
+        &:before{transform: translateY(-$b+vmin) translateZ(-$d/8+vmin);}
+        &:after{transform: translateY(-$b+vmin) translateZ(-$d/4+vmin); top:0;}
+
+        .ortho__inner, .ortho__sides{height: 100%; width: 100%;}
+
+        .ortho__inner{
+            &:before{transform: translateY(-$b+vmin) translateZ(-$d/2.666+vmin);}
+            &:after{transform: translateY(-$b+vmin) translateZ(-$d/2+vmin); top:0; left:0;} 
+        }
+
+        .ortho__sides{    
+            transform: none;       
+            &:before{transform: translateY(-$b+vmin) translateZ(-$d/1.6+vmin);}
+            &:after{transform: translateY(-$b+vmin) translateZ(-$d/1.333+vmin); top:0; left:0;}  
+        }
+
+        .ortho__innerSides{
+            &:before{transform: translateY(-$b+vmin) translateZ(-$d/1.1428+vmin);}
+            &:after{transform: translateY(-$b+vmin) translateZ(-$d+vmin); top:0; left:0;} //back
+        }
     }
 }

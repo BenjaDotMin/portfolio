@@ -17,8 +17,13 @@
     }   
     
     .ortho__hole{
-       @include holeSize(10, 10, 2, 2, green, 0); //w/h/d/thickness/color/radius
-       @include orthoPosition(50, 0, 90, 0); //x/y/t/l/z/rx/ry/rz/ //rotate for diamond or flat rotate only X90
+        @include holeSize(10, 10, 3, 2, green, 0); //w/h/d/thickness/color/radius%
+        @include orthoPosition(50, 0, 90, 0); //x/y/t/l/z/rx/ry/rz/ //rotate for diamond or flat rotate only X90
+
+        &.--rounded{ 
+            @include holeSize(10, 10, 2, 2, red, 50); //w/h/d/thickness/color/radius%
+            @include orthoPosition(50, 150, 90, 0); //x/y/t/l/z/rx/ry/rz/ //rotate for diamond or flat rotate only X90
+        }
     }  
 
     .ortho__block{
