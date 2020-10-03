@@ -10,15 +10,15 @@ import MessageIcon from '../../Shapes/MessageIcon';
 import Sphere from '../../Shapes/Sphere';
 import "./Demo.scss";
 
-function Window() {
+function Demo() {
     return (
         <div className="demo">
             <Hole />
-            <Cylinder clickable />
+            <Cylinder detail clickable />
             <Block />
             <BlockShape cross />
-            <Image />
-            <MessageIcon />
+            <Image clickable />
+            <MessageIcon clickable />
             <Text />
             <Cloud />
             <Sphere />
@@ -26,4 +26,4 @@ function Window() {
     )
 }
 
-export default Window
+export default Demo
