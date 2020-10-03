@@ -1,7 +1,6 @@
 .ortho__inner, .ortho__hole{&:before{top: 0;}&:after{top: 100%;}}
 
 .ortho__hole, .ortho__inner, .ortho__sides, .ortho__innerSides{&:before, &:after{background-color:#ddd;}}
-.ortho__inner {height: 100%; width: 100%; }
 .ortho__inner:after, .ortho__inner:before{width: 100%;}
 .ortho__hole, .ortho__inner{&:before,&:after{ content:""; position: absolute; transform-origin: top;}}
 
@@ -10,16 +9,15 @@
         &:before{transform: rotateY(90deg); } //left
         &:after{transform: rotateY(-90deg);} //right
     }
-    .ortho__inner{
-        &:before{transform:translateY(-1.7px) rotateX(-90deg)}  
-        &:after{transform: translateY(1.7px) rotateX(-90deg);}   
 
-        .ortho__innerSides{height: 100%; width: 100%;
-            &:before, &:after{height: 102.7%;}
-            &:before{transform: translateX(-1.7px) translateY(-3.6px) rotateY(-90deg);} //left
-            &:after{transform: translateX(1.7px) translateY(-3.6px) rotateY(90deg);} //right    
+    .ortho__inner{height: 100.1%; width: 100.1%; 
+        .ortho__innerSides{height: 100.1%; width: 100.1%;        
+            &:before, &:after{height:100%}
+            &:before{transform: rotateY(-90deg);} //left           
+            &:after{transform: rotateY(90deg);} //right    
         }
     }
+    
     .ortho__sides, .ortho__inner{transform-style: preserve-3d;}
     .ortho__innerSides, .ortho__sides, .ortho__inner{position: relative;}
     .ortho__innerSides, .ortho__sides{

@@ -9,7 +9,9 @@
 
     .ortho__sides{width: $w+vmin; height: $h+vmin; transform: translateY(-$b+vmin) translateX(-$b+vmin) translateZ(-$d+vmin);}
 
-    .ortho__inner{&:before, &:after{height: $d+vmin;}}
+    .ortho__inner{
+        &:before, &:after{height: $d+vmin; transform: rotateX(-90deg);} 
+    }
 
     .ortho__innerSides, .ortho__sides{
         &:before, &:after{width: $d+vmin;}
