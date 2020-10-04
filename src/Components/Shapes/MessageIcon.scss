@@ -1,13 +1,5 @@
 .ortho__messageIcon{
     .cylinder__dots{display: flex; align-items: center; justify-content: center; height: 80%; transform-style: preserve-3d; transition:0.2s;
-        .ortho__cylinder{position: relative !important;}       
-    }
-
-    &.--clickable{
-        &:active{
-            .cylinder__dots{
-                transform: translateZ(-14px)       
-            }
-        }
+        .ortho__cylinder{position: relative !important; margin: 0 7px;}       
     }
 }

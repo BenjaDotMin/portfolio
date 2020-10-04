@@ -8,21 +8,23 @@ import Text from "../../Shapes/Text";
 import Cloud from "../../Shapes/Cloud";
 import MessageIcon from '../../Shapes/MessageIcon';
 import Sphere from '../../Shapes/Sphere';
+import Heart from '../../Shapes/Heart';
 import "./Demo.scss";
 
 function Demo() {
     return (
         <div className="demo">
-            <Hole />
-            <Hole rounded />
-            <Cylinder detail clickable />
-            <Block />
-            <BlockShape cross />
-            <Image clickable />
-            <MessageIcon clickable />
-            <Text />
-            <Cloud />
-            <Sphere />
+            {/* <Hole />
+            <Hole rounded /> */}
+            {/* <Cylinder detail clickable /> */}
+            {/* <Block />
+            <BlockShape cross /> */}
+            <Image clickable amount={10} />
+            <MessageIcon amount={20} clickable />
+            <Text clickable text="DAY 1" amount={10} />
+            <Heart amount={60} clickable />
+            <Cloud amount={20} />
+            {/* <Sphere /> */}
         </div>
     )
 }

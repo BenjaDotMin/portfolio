@@ -88,29 +88,23 @@
                 .ortho__shadow{&:after{background-color:#ff3535;}} //until var setup, of front
                 .ortho__shadow, &:after{background-color:darken(#ff3535, 15);} //until var setup, of this   
                 .ortho__cover, .ortho__sides{background-color:#f1f1f1;} //until var setup, of cover     
-                margin: 0 7px;
             }       
         }
     }
 
     .ortho__text{  
-        &:before, &:after, .ortho__shadow:before, .ortho__shadow:after{
-            content:"DAY 1";
-        }
-
-        @include size(3vw, 1vw);
-        //display: block; //set as block, as there's no html content
-        @include orthoPosition(250, 950, 50, 50); //x/y/t/l/z/rx/ry/rz/ 
-        font-size: 12rem;     
-        line-height: 1;  
+        @include orthoPosition(50, 50, 90, 50); //x/y/t/l/z/rx/ry/rz/
+        span{font-size: 12rem; line-height: 1; font-weight:bold; top:0; left:0; color:#ddd;
+            &:first-child{color:red;}
+        }          
     }
 
     .ortho__cloudGroup{     
-        //cloud group should not have a parent
+        .ortho__cloud{background-color: #ddd;
+            &:first-child{background-color: red;}
+        }         
         @include orthoPosition(0, 0, 150, 250); //x/y/t/l/z/rx/ry/rz/
-        // &.floating__cloud{animation-name: floatAlong; animation-duration: 350s; animation-timing-function: linear; animation-iteration-count: infinite;
-        //     &.--fast{animation-duration: 100s;}
-        // }   
+        // &.floating__cloud{animation-name: floatAlong; animation-duration: 350s; animation-timing-function: linear; animation-iteration-count: infinite;}   
         // @keyframes floatAlong {
         //     from {transform: rotateY(-48deg) translateY(15vh) translateX(104vw); }
         //     to {transform: rotateY(-48deg) translateY(15vh) translateX(-12vw); } 
