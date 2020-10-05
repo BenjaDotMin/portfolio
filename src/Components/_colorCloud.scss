@@ -1,0 +1,11 @@
+@mixin colorCloud($bg:#f1f1f1){
+    .ortho__cloud{background-color: darken($bg, 8);
+        &:first-child{background-color: $bg;}
+    }  
+
+    // &.floating__cloud{animation-name: floatAlong; animation-duration: 350s; animation-timing-function: linear; animation-iteration-count: infinite;}   
+    // @keyframes floatAlong {
+    //     from {transform: rotateY(-48deg) translateY(15vh) translateX(104vw); }
+    //     to {transform: rotateY(-48deg) translateY(15vh) translateX(-12vw); } 
+    // } 
+}

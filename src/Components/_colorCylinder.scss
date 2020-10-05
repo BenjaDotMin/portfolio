@@ -1,0 +1,8 @@
+@mixin colorCylinder($bg:#f1f1f1, $c:#ddd){
+    .ortho__shadow{&:after{background-color:$bg;}} 
+    .ortho__shadow, &:before, &:after{background-color:darken($bg, 8);}    
+ 
+    .ortho__cover{
+        &, .ortho__sides{background-color:$c;} 
+    } 
+}

@@ -1,0 +1,3 @@
+@mixin colorText($bg:#f1f1f1, $s:12, $w:bold){
+    span{color:darken($bg, 8); font-size: $s+rem; font-weight:$w; &:first-child{color:$bg;}}  
+}
