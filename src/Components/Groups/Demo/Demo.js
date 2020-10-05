@@ -14,17 +14,18 @@ import "./Demo.scss";
 function Demo() {
     return (
         <div className="demo">
-            {/* <Hole />
-            <Hole rounded /> */}
-            {/* <Cylinder detail clickable /> */}
-            {/* <Block />
-            <BlockShape cross /> */}
+            <Hole />
+            <Hole rounded />
+            <Cylinder detail clickable />
+            <Block />
+            <BlockShape cross />
+            <BlockShape tick />
             <Image clickable amount={10} />
             <MessageIcon amount={20} clickable />
             <Text clickable text="DAY 1" amount={10} />
             <Heart amount={60} clickable />
             <Cloud amount={20} />
-            {/* <Sphere /> */}
+            <Sphere />
         </div>
     )
 }

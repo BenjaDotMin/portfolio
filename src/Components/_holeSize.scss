@@ -21,6 +21,8 @@
         &:before{left: -$d+vmin;}
     }
 
+    &, .ortho__inner, .ortho__sides, .ortho__innerSides{&:before, &:after{background-color: darken($c, 8);}}
+
     &.--rounded{    
         &, .ortho__inner, .ortho__sides, .ortho__innerSides{
             border-radius: $r#{"%"};

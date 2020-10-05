@@ -1,19 +1,17 @@
-.ortho__block{background-color: #f1f1f1; 
-           
+.ortho__block{           
     &:after, &:before, .ortho__sides:after, .ortho__sides:before{
         content: "";                   
         width: 100%;
-        height: 100%;    
-        background-color: #ddd;   
+        height: 100%;      
         position: absolute;   
     }  
 
-    //rotate the sides independantly   
-    &:before{transform-origin: bottom; transform: rotateX(90deg); top: -100%; background: #f9f9f9;} //top
+    //rotate the sides independently   
+    &:before{transform-origin: bottom; transform: rotateX(90deg); top: -100%;} //top
     &:after{transform-origin: top; transform: rotateX(-90deg); top: 100%;} //bottom       
   
     .ortho__sides{     
-        width: 100%; height: 100%; background-color: #ddd; position: absolute; transform-style: preserve-3d;         
+        width: 100%; height: 100%; position: absolute; transform-style: preserve-3d;      
         &:before{transform: rotateY(-90deg) translateX(100%); transform-origin: right; } //left   
         &:after{transform: rotateY(90deg) translateX(-100%); transform-origin: left; } //right                  
     }     
@@ -21,11 +19,5 @@
     &.--rounded{
         border-radius: 30px;       
         &:after, &:before, .ortho__sides, .ortho__sides:after, .ortho__sides:before{border-radius: inherit;}  
-
-        //add to 100% to get even gradient either side (5, 95), but no shadow would be on left for us
-        background: linear-gradient(90deg,#f1f1f1 0%, #f1f1f1 90%, #ddd 100%);  
-        
-        //left side would have full light source                              
-        .ortho__sides:before{background-color: #f1f1f1;}  
     }        
 }

@@ -1,8 +1,8 @@
 .ortho__cylinder, .ortho__shadow, .ortho__shadowInner{&:before, &:after{content:""; position: absolute; height:100%; width: 100%;}}
-.ortho__cylinder, .ortho__shadow{&:after{border-radius: 50%;}}
 .ortho__shadow, .ortho__sides, .ortho__shadowInner, .ortho__cover{position: absolute;}
 
 .ortho__cylinder{
+    &, &:before, &:after{border-radius: 50%;}
     .ortho__cover, .ortho__sides{&:before, &:after{background-color:inherit;}} 
     .ortho__shadow, .ortho__shadowInner, .ortho__cover, .ortho__sides{transform-style: preserve-3d;}
     .ortho__cover, .ortho__sides{&:before, &:after{content: ""; position: absolute;}}
@@ -23,7 +23,7 @@
         transform:rotateY(-90deg);
 
         &:before{background-color:inherit; transform: rotateX(90deg);}
-        &:after{left: 100%;}      
+        &:after{left: 100%; border-radius: 50%;}      
 
         .ortho__shadowInner{background-color:inherit; height: 100%; width: 100%; transform: rotateX(45deg);  
             &:before, &:after{background-color:inherit;}

@@ -1,0 +1,8 @@
+@mixin colorSVG($front: #f1f1f1, $a:black){
+    svg{fill: darken($front, 8); &:first-child{fill:$front;}}
+
+    &.--active{
+        svg{&:first-child{fill: $a;}
+        }
+    }
+}

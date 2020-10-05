@@ -1,6 +1,5 @@
 .ortho__inner, .ortho__hole{&:before{top: 0;}&:after{top: 100%;}}
 
-.ortho__hole, .ortho__inner, .ortho__sides, .ortho__innerSides{&:before, &:after{background-color:#ddd;}}
 .ortho__inner:after, .ortho__inner:before{width: 100%;}
 .ortho__hole, .ortho__inner{&:before,&:after{ content:""; position: absolute; transform-origin: top;}}
 
