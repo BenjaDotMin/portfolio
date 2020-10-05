@@ -1,0 +1,4 @@
+@mixin sphere($w:15, $h:15, $bg:#ddd){width:$w+vmin; height: $h+vmin;
+    background: radial-gradient(circle at 35% 35%, lighten($bg, 8), $bg);
+    &:after{bottom: -$h/2+0.05vmin; background:radial-gradient(circle at 50% 50%, rgba(0, 0, 0, .3%), rgba(0, 0, 0, .08%) 30%, rgba(255, 255, 255, 0%) 60%);}
+}

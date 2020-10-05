@@ -1,0 +1,24 @@
+@mixin block($w:20,$h:20, $d:30, $bg:#f1f1f1){
+    background-color: $bg;
+    width:$w+vmin;height:$h+vmin;
+    &:before{height:$d+vmin;top:-$d+vmin;}
+    &:after{height:$d+vmin;}
+    
+    .ortho__sides{transform: translateZ(-$d+vmin); background-color: darken($bg, 8);
+        &:after, &:before{background-color: darken($bg, 8);}  
+        &:before{width: $d+vmin;left:-$d+vmin;}
+        &:after{width:$d+vmin;right:-$d+vmin;}
+    }
+
+    .ortho__block{width:$w+vmin;height:$h+vmin; 
+        &:before{height:$d+vmin;top:-$d+vmin;}
+        &:after{height:$d+vmin;}
+    }
+
+    &.--rounded{
+        //add to 100% to get even gradient either side (5, 95), but no shadow would be on left for us
+        background: linear-gradient(90deg,$bg 0%,$bg 90%,darken($bg, 8) 100%);  
+        //left side should have full light source                              
+        .ortho__sides:before{background-color:darken($bg, 8);}  
+    } 
+}

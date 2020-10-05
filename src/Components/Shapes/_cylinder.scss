@@ -1,4 +1,4 @@
-@mixin cylinderSize($w:20, $d:4, $cd:1.6){   
+@mixin cylinder($w:20, $d:4, $cd:1.6, $bg: #f1f1f1, $c:white){   
     width: $w+vmin; 
     height:$w+vmin;     
 
@@ -9,16 +9,21 @@
         &:after{
             width: $w+vmin;
             height: $w+vmin;
-            transform: translateX(-$w/2+0.1vmin) rotateY(-90deg);              
+            transform: translateX(-$w/2+0.1vmin) rotateY(-90deg);  
+            background-color:$bg;            
         }
     }
 
+    .ortho__shadow, &:before, &:after{background-color:darken($bg, 8);}   
+       
     .ortho__cover{       
         width: $w+0.4vmin; 
-        height:$w+0.4vmin;         
+        height:$w+0.4vmin;      
+        &, .ortho__sides{background-color:$c;}   
+
         transform: translateX(-0.2vmin) translateY(-0.2vmin);
         &:before, &:after{height:$d/$cd+vmin;}
-        &:before{top: -$d/$cd+vmin;}
+        &:before{top: -$d/$cd+vmin;}        
 
         .ortho__sides{           
             transform: translateZ(-$d/$cd+vmin);
@@ -31,5 +36,5 @@
         &:active{ 
             .ortho__shadow{transform: translateZ(-$d/$cd+vmin) rotateY(-90deg);}
         }
-    }    
+    } 
 }

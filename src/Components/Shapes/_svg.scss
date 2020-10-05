@@ -1,0 +1,9 @@
+@mixin svg($w:10, $h:10, $front: #f1f1f1, $a:black){
+    width:$w+vmin; height: $h+vmin;    
+    svg{fill: darken($front, 8); &:first-child{fill:$front;}}
+
+    &.--active{
+        svg{&:first-child{fill: $a;}
+        }
+    }
+}

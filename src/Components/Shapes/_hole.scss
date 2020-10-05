@@ -1,4 +1,4 @@
-@mixin holeSize($w:20, $h:20, $d:2, $b:3, $c:black, $r:0){
+@mixin hole($w:20, $h:20, $d:2, $b:3, $c:#f1f1f1, $r:0){
     width: $w+vmin;
     height:$h+vmin;
     border: $b+vmin solid $c;
