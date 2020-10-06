@@ -6,7 +6,7 @@ import "./Window.scss";
 
 function Window() {
     return (
-        <div className="window">
+        <div className="window parent">
             <Hole />
             <Block />
             <Cylinder clickable />

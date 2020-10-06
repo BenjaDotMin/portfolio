@@ -1,6 +1,6 @@
 .ortho__sphere{    
     border-radius: 50%;       
- 
+    transform: rotateY(48deg);
     &:after{
         content:"";
         position: absolute;

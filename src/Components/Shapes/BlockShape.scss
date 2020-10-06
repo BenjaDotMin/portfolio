@@ -1,8 +1,8 @@
 .ortho__block{        
     &.--cross{  
-        .ortho__block{transform:rotateZ(90deg); top: 0; left:0} //rotate inner block and remove rotationY          
+        .ortho__block{transform:rotateZ(90deg); top: 0; left:0} //rotate inner block         
     }    
-    &.--tick{
+    &.--tick{ transform: rotateZ(-45deg);
         .ortho__block{width: 25% !important; top: -96%; left: 0; transform: translateZ(0);}
     } 
 } 

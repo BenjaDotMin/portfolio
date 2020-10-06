@@ -6,7 +6,7 @@ function Heart({ clickable, amount = 5, clickdepth = 20 }) {
     const half = amount / 2;
 
     return (
-        <div onMouseDown={() => setMouseDown(b => !b)} onMouseUp={() => { setMouseDown(b => !b); setActive(b => !b); }} className={`ortho__heart ${clickable ? "--clickable" : ""} ${active ? "--active" : ""}`} >
+        <div onMouseDown={() => setMouseDown(b => !b)} onMouseUp={() => { setMouseDown(b => !b); setActive(b => !b); }} className={`ortho__heart shape ${clickable ? "--clickable" : ""} ${active ? "--active" : ""}`} >
             {/* make an array with length of amount number */}
             {Array.from({ length: amount }, (e, i) => (
                 //load svg elements with either a state change event, or not

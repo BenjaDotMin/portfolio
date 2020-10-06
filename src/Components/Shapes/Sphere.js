@@ -4,7 +4,7 @@ import "./Sphere.scss";
 
 function Sphere() {
     return (
-        <div className="ortho__sphere" ></div>
+        <div className="ortho__sphere shape" ></div>
     )
 }
 

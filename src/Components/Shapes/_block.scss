@@ -1,4 +1,4 @@
-@mixin block($w:20,$h:20, $d:30, $bg:#f1f1f1){
+@mixin block($w:20,$h:20, $d:20, $bg:#f1f1f1){
     background-color: $bg;
     width:$w+vmin;height:$h+vmin;
     &:after, &:before{background-color: darken($bg, 8);}  
