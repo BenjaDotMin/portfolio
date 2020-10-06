@@ -7,35 +7,35 @@
 @import "../../Shapes/_cylinder.scss";
 @import "../../Shapes/_colorCloud.scss";
 
-.demo{
-    width: 20%; height: 20%;
-    @include orthoPosition(0, 0, 0, 0, 0, 0, -48); //x/y/t/l/z/rx/ry/rz
-        
+.demo{  
+    width: 100%; height: 100%; transform-origin: right;
+    @include orthoPosition(0, 0, 0, 0, 0, 0, -48); //t/l/x/y/z/rx/ry/rz/
+    
     .ortho__cylinder{
         @include cylinder(20, 4, 1.6, #ff3535, white); //w/d/click-depth/bg/cover
-        @include orthoPosition(280, 50, 50, 50); //x/y//t/lz/rx/ry/rz  
+        @include orthoPosition(20, 20, 0, 0); //t/l/x/y/z/rx/ry/rz/
     }   
-    
+        
     .ortho__hole{
-        @include hole(10, 10, 3, 2, green, 50); //w/h/d/thickness/bg/radius%
-        @include orthoPosition(50, 0, 90, 0); //x/y/t/l/z/rx/ry/rz/ //rotate for diamond or flat rotate only X90
+        @include hole(12, 12, 4, 2, green, 50); //w/h/d/thickness/bg/radius%
+        @include orthoPosition(30, 0); //t/l/x/y/z/rx/ry/rz/ //rotate for diamond or flat rotate only X90
         
         &.--rounded{ 
-            @include orthoPosition(50, 150, 90, 0); //x/y/t/l/z/rx/ry/rz/
+            @include orthoPosition(80, 220); //t/l/x/y/z/rx/ry/rz/
         }
     }  
 
     .ortho__block{
         @include block(40, 20, 6, #ff3535); //w/h/d/bg
-        @include orthoPosition(320, 100, 50, 50); //x/y/t/l/z/rx/ry/rz/  
+        @include orthoPosition(20, 60); //t/l/x/y/z/rx/ry/rz/  
 
         &.--cross{  
-            @include block(4, 1, 1, #ff3535); //w/h/d/bg
-            @include orthoPosition(2150, 50, 50, 50); //x/y/t/l/z/rx/ry/rz/ //rotate for X      
+            @include block(6, 1.5, 2, #ff3535); //w/h/d/bg
+            @include orthoPosition(70, 60); //t/l/x/y/z/rx/ry/rz/     
         }    
         &.--tick{
-            @include block(4, 1, 1, #ff3535); //w/h/d/bg
-            @include orthoPosition(2350, 50, 50, 50, 0, 0, 0, -45); //x/y/t/l/z/rx/ry/rz/ 
+            @include block(6, 1.5, 2, #ff3535); //w/h/d/bg
+            @include orthoPosition(70, 65, 0, 0, 0, 0, 0, -45); //t/l/x/y/z/rx/ry/rz/ /rx for tick
         }   
                     
         // &:after{ //nice shadows
@@ -48,38 +48,38 @@
 
     .ortho__image{
         @include svg(14, 7.3, #ff3535); //w/h/front/active 
-        @include orthoPosition(750, 650, 50, 50); //x/y/t/l/z/rx/ry/rz/
+        @include orthoPosition(75, 0); //t/l/x/y/z/rx/ry/rz/
     }
 
     .ortho__heart{
         @include svg(14, 13.3, #ff3535, black); //w/h/front/active  
-        @include orthoPosition(500, 300, 50, 50); //x/y/t/l/z/rx/ry/rz/
+        @include orthoPosition(92, 0); //t/l/x/y/z/rx/ry/rz/
     }
 
     .ortho__messageIcon{
         @include svg(14, 12.2, #ff3535); //w/h/front/active 
-        @include orthoPosition(800, -50, 50, 50); //x/y/t/l/z/rx/ry/rz/
+        @include orthoPosition(70, 80); //t/l/x/y/z/rx/ry/rz/
     
         .cylinder__dots{
             .ortho__cylinder{
                 @include cylinder(1.4, 0.6, 0, white); //w/d/click depth/bg/cover
-                @include orthoPosition(); //x/y/t/l/z/rx/ry/rz/
+                @include orthoPosition(0, 0, 0, 0, 0, 0, 0); //t/l/x/y/z/rx/ry/rz/ reset ry
             }       
         }
     }
 
     .ortho__text{  
         @include text(#ff3535); //color/font-size/weight/line-height         
-        @include orthoPosition(50, 50, 90, 90); //x/y/t/l/z/rx/ry/rz/                   
+        @include orthoPosition(50, 30, 0, 0); //t/l/x/y/z/rx/ry/rz/                   
     }
 
     .ortho__cloudGroup{                   
-        //@include colorCloud(#ff3535); //bg
-        @include orthoPosition(0, 0, 150, 250); //x/y/t/l/z/rx/ry/rz/
+        @include colorCloud(#ff3535); //bg
+        @include orthoPosition(90, 40, 0, 0); //t/l/x/y/z/rx/ry/rz/
     }    
 
     .ortho__sphere{    
         @include sphere(12, 12, #ff3535); //w/h/bg      
-        @include orthoPosition(250, 450, 50, 50, 0, 0, 48); //x/y/t/l/z/rx/ry/rz/
+        @include orthoPosition( 0, 0, 180, 440, 0, 0, 48); //t/l/x/y/z/rx/ry/rz/ reset ry
     }  
 }

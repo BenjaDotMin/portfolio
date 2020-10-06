@@ -9,8 +9,8 @@
         &:after{transform: rotateY(-90deg);} //right
     }
 
-    .ortho__inner{height: 100.1%; width: 100.1%; 
-        .ortho__innerSides{height: 100.1%; width: 100.1%;        
+    .ortho__inner{height: 100.1%; width: 100%; 
+        .ortho__innerSides{height: 100%; width: 100.1%;        
             &:before, &:after{height:100%}
             &:before{transform: rotateY(-90deg);} //left           
             &:after{transform: rotateY(90deg);} //right    
@@ -23,5 +23,5 @@
         &:before, &:after{content:""; position: absolute; height: 100%;}
         &:before{transform-origin: right;}
         &:after{left: 100%; transform-origin: left;}
-    }     
+    }    
 }   

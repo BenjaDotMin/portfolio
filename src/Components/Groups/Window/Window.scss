@@ -1,46 +1,39 @@
-@import "../../_orthoPosition.scss";
-@import "../../_holeSize.scss";
-@import "../../_blockSize.scss";
-@import "../../_size.scss";
-@import "../../_cylinderSize.scss";
+@import "../../Shapes/_orthoPosition.scss";
+@import "../../Shapes/_hole.scss";
+@import "../../Shapes/_block.scss";
+@import "../../Shapes/_cylinder.scss";
+@import "../../Shapes/_colorCloud.scss";
 
 .window{
-    @include size(80vmin, 45vmin);
-    @include orthoPosition(130, 70, 0, 0, 0, 0, -48); //x/y/t/l/z/rx/ry/rz/ or no args
+    width: 90vmin; height: 50vmin;
+    @include orthoPosition(30, 53, 0, 0,  0, 0, -48); //t/l/x/y/z/rx/ry/rz/
 
     .ortho__hole{
-        @include holeSize(80, 48, 2, 0.8, #f1f1f1, 0); //w/h/d/thickness/color/radius
-        @include orthoPosition(); //x/y/t/l/z/rx/ry/rz/ //rotate for diamond or flat rotate only X90
+        @include hole(80, 48, 2, 0.8, #f1f1f1, 0); //w/h/d/thickness/color/radius
+        @include orthoPosition(); //t/l/x/y/z/rx/ry/rz/ 
     }
 
     .ortho__block{
-        &:nth-child(2){@include blockSize(80, 3.7, 2); @include orthoPosition();}        
-        &:nth-child(6),&:nth-child(7), &:nth-child(8){@include blockSize(3, 0.55, 1.2);}
-        &:nth-child(6){@include orthoPosition(2500, 940);}
-        &:nth-child(7){@include orthoPosition(2500, 1120);}
-        &:nth-child(8){@include orthoPosition(2500, 1320);}
-        &:nth-child(9){@include blockSize(50, 23.7, 20); @include orthoPosition(50, 70, 0, 0, 15);}
+        &:nth-child(2){@include block(80, 3.7, 2);@include orthoPosition();}        
+        &:nth-child(6),&:nth-child(7), &:nth-child(8){@include block(3, 0.55, 1.2);}
+        &:nth-child(6){@include orthoPosition(10, 83);}
+        &:nth-child(7){@include orthoPosition(12, 83);}
+        &:nth-child(8){@include orthoPosition(14, 83);}
+        &:nth-child(9){@include block(50, 23.7, 20); @include orthoPosition(33, 29, 0, 0, 15);}
     }
 
     .ortho__cylinder{
-        @include cylinderSize(1.8, 0.6); //w/d/click depth
-        .ortho__cover, .ortho__sides{background-color:#f1f1f1;} //until var setup, of cover 
-
         &:nth-child(3){
-            @include orthoPosition(87, 62);
-            .ortho__shadow{&:after{background-color:#ff3535;}} //until var setup, of front
-            .ortho__shadow, &:after{background-color:darken(#ff3535, 15);} //until var setup, of this            
-               
+            @include cylinder(1.8, 0.6, 1.6, #ff3535, #f1f1f1); //w/d/click-depth/bg/cover
+            @include orthoPosition(1.98, 2);          
         }
         &:nth-child(4){
-            @include orthoPosition(253, 62);        
-            .ortho__shadow{&:after{background-color:#fdb140;}} //until var setup, of front
-            .ortho__shadow, &:after{background-color:darken(#fdb140, 15);} //until var setup, of this            
+            @include cylinder(1.8, 0.6, 1.6, #fdb140, #f1f1f1);
+            @include orthoPosition(1.98, 5.2);                  
         }
         &:nth-child(5){
-            @include orthoPosition(432, 62);
-            .ortho__shadow{&:after{background-color:#34ce27;}} //until var setup, of front
-            .ortho__shadow, &:after{background-color:darken(#34ce27, 15);} //until var setup, of this            
+            @include cylinder(1.8, 0.6, 1.6, #34ce27, #f1f1f1);    
+            @include orthoPosition(1.98, 8.5);               
         }
     }
 }

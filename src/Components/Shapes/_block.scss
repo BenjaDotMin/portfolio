@@ -1,17 +1,19 @@
 @mixin block($w:20,$h:20, $d:30, $bg:#f1f1f1){
     background-color: $bg;
     width:$w+vmin;height:$h+vmin;
+    &:after, &:before{background-color: darken($bg, 8);}  
     &:before{height:$d+vmin;top:-$d+vmin;}
     &:after{height:$d+vmin;}
     
     .ortho__sides{transform: translateZ(-$d+vmin); background-color: darken($bg, 8);
-        &:after, &:before{background-color: darken($bg, 8);}  
+        &:after, &:before{background-color: inherit;}  
         &:before{width: $d+vmin;left:-$d+vmin;}
         &:after{width:$d+vmin;right:-$d+vmin;}
     }
 
     .ortho__block{width:$w+vmin;height:$h+vmin; 
-        &:before{height:$d+vmin;top:-$d+vmin;}
+        &:after, &:before{background-color: darken($bg, 8);}  
+        &:before{height:$d+vmin;top:-$d+vmin; }
         &:after{height:$d+vmin;}
     }
 

@@ -8,6 +8,7 @@ function Hole({ rounded }) {
                 <div className="ortho__innerSides"></div>
             </div>
             <div className="ortho__sides"></div>
+            <div className="ortho__back"></div>
         </div>
     )
 }

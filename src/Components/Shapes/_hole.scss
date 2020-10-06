@@ -22,12 +22,26 @@
     }
 
     &, .ortho__inner, .ortho__sides, .ortho__innerSides{&:before, &:after{background-color: darken($c, 8);}}
+    
+    
+    .ortho__back{
+        position: absolute;
+        top:-$b+vmin;
+        left: -$b+vmin;
+        height: $h+vmin;
+        width: $w+vmin;
+        transform: translateZ(-$d+vmin);
+        border-color:darken($c, 8);
+        border: $b+vmin solid darken($c, 8);
+    }
 
     &.--rounded{    
         &, .ortho__inner, .ortho__sides, .ortho__innerSides{
             border-radius: $r#{"%"};
             &:before, &:after{border-radius: inherit; background-color: transparent; border:$b+vmin solid darken($c, 8); left: -$b+vmin !important; height: 100%; width: 100%;}
         }
+
+        .ortho__back{border-radius: $r#{"%"};}
        
         &:before{transform: translateY(-$b+vmin) translateZ(-$d/8+vmin);}
         &:after{transform: translateY(-$b+vmin) translateZ(-$d/4+vmin); top:0;}
