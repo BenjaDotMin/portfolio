@@ -8,7 +8,7 @@ function Font() {
         <div className="font parent">
             <Block />
             <Block />
-            <Text text="A" amount={24} />
+            <Text text="A" amount={15} />
         </div>
     )
 }

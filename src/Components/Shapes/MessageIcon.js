@@ -26,11 +26,11 @@ function MessageIcon({ clickable, float, amount = 5, clickdepth = 2 }) {
             {/* make an array with length of amount number */}
             {Array.from({ length: amount }, (e, i) => (
                 //load svg elements with either a state change event, or not
-                i === 0 ? (<svg key={i} style={{ transform: mouseDown ? `translateZ(-${move / 10 - 0.2}vmin)` : "" }} viewBox="0 0 46 36"><path d="M43.1,27H10L0,36V2.9C0,1.3,1.3,0,2.9,0h40.2C44.7,0,46,1.3,46,2.9v21.2C46,25.7,44.7,27,43.1,27z" /></svg>) :
-                    i < move ? (<svg key={i} style={{ transform: mouseDown ? `translateZ(-${move / 10 - 0.1}vmin)` : "" }} viewBox="0 0 46 36"><path d="M43.1,27H10L0,36V2.9C0,1.3,1.3,0,2.9,0h40.2C44.7,0,46,1.3,46,2.9v21.2C46,25.7,44.7,27,43.1,27z" /></svg>) :
+                i === 0 ? (<svg key={i} style={{ transform: mouseDown && clickable ? `translateZ(-${move / 10 - 0.2}vmin)` : "" }} viewBox="0 0 46 36"><path d="M43.1,27H10L0,36V2.9C0,1.3,1.3,0,2.9,0h40.2C44.7,0,46,1.3,46,2.9v21.2C46,25.7,44.7,27,43.1,27z" /></svg>) :
+                    i < move ? (<svg key={i} style={{ transform: mouseDown && clickable ? `translateZ(-${move / 10 - 0.1}vmin)` : "" }} viewBox="0 0 46 36"><path d="M43.1,27H10L0,36V2.9C0,1.3,1.3,0,2.9,0h40.2C44.7,0,46,1.3,46,2.9v21.2C46,25.7,44.7,27,43.1,27z" /></svg>) :
                         (<svg key={i} viewBox="0 0 46 36"><path d="M43.1,27H10L0,36V2.9C0,1.3,1.3,0,2.9,0h40.2C44.7,0,46,1.3,46,2.9v21.2C46,25.7,44.7,27,43.1,27z" /></svg>)
             ))}
-            <div style={{ transform: mouseDown ? `translateZ(-${amount / clickdepth - 0.1}vmin)` : "" }} className="cylinder__dots">
+            <div style={{ transform: mouseDown && clickable ? `translateZ(-${amount / clickdepth - 0.2}vmin)` : "" }} className="cylinder__dots">
                 <Cylinder />
                 <Cylinder />
                 <Cylinder />

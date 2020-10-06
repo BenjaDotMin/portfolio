@@ -14,14 +14,14 @@
         &:nth-child(2){
             @include block(7, 1.4, 1.4, red);
             @include orthoPosition(18, 50);
-            transform: translateX(-50%) translateZ(19px);
+            transform: translateX(-50%) translateZ(15px);
         }
     }
 
     .ortho__text{
         width: 9vmin; height: 15vmin;
-        transform: translateX(-50%) translateZ(19px);
-        @include text();        
+        transform: translateX(-50%) translateZ(15px);
+        @include text(red);        
         @include orthoPosition(20, 50);
     }
 }
