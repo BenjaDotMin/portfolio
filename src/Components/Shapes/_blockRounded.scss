@@ -1,0 +1,26 @@
+@mixin blockRounded($w:20, $h:20, $d:2, $c:#f1f1f1, $r:2){
+    width: $w+vmin;
+    height:$h+vmin;
+    border: 1+vmin solid $c;
+    background-color: $c;
+
+    &, .ortho__inner, .ortho__sides{
+        border-radius: $r+vmin;
+        &:before, &:after{border-radius: inherit; background-color: transparent; border:1+vmin solid darken($c, 8); background-color: darken($c, 8); left: -1+vmin !important; height: 100%; width: 100%;}
+    }
+
+    &:before{transform: translateY(-1+vmin) translateZ(-$d/8+vmin);}
+    &:after{transform: translateY(-1+vmin) translateZ(-$d/4+vmin); top:0;}
+
+    .ortho__sides{height: 100%; width: 100%;}
+
+    .ortho__inner{
+        &:before{transform: translateY(-1+vmin) translateZ(-$d/2.666+vmin);}
+        &:after{transform: translateY(-1+vmin) translateZ(-$d/2+vmin); top:0; left:0;} 
+    }
+
+    .ortho__sides{    
+        &:before{transform: translateY(-1+vmin) translateZ(-$d/1.6+vmin);}
+        &:after{transform: translateY(-1+vmin) translateZ(-$d/1.333+vmin); top:0; left:0;}  
+    }
+}

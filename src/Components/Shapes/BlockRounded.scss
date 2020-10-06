@@ -1,0 +1,6 @@
+
+.ortho__blockRounded{  
+    &, .ortho__sides{&:before,&:after{ content:""; position: absolute;}}
+    .ortho__inner{height: 100%;}
+    .ortho__sides{position: relative; top: -100%;}    
+}   

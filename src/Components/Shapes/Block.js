@@ -1,9 +1,9 @@
 import React from 'react';
 import "./Block.scss";
 
-function Block({ rounded }) {
+function Block() {
     return (
-        <div className={`ortho__block shape ${rounded ? "--rounded" : ""}`}>
+        <div className={`ortho__block shape`}>
             <div className={`ortho__sides`}></div>
         </div>
     )

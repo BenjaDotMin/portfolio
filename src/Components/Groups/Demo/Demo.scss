@@ -1,6 +1,7 @@
 @import "../../Shapes/_orthoPosition.scss";
 @import "../../Shapes/_hole.scss";
 @import "../../Shapes/_block.scss";
+@import "../../Shapes/_blockRounded.scss";
 @import "../../Shapes/_svg.scss";
 @import "../../Shapes/_text.scss";
 @import "../../Shapes/_sphere.scss";
@@ -13,7 +14,7 @@
     
     .ortho__cylinder{
         @include cylinder(20, 4, 1.6, #ff3535, white); //w/d/click-depth/bg/cover
-        @include orthoPosition(20, 20); //t/l
+        @include orthoPosition(20, 30); //t/l
     }   
         
     .ortho__hole{
@@ -23,6 +24,11 @@
         &.--rounded{ 
             @include orthoPosition(50, 0); //t/l
         }
+    }  
+
+    .ortho__blockRounded{
+        @include blockRounded(35, 12, 2 ,green, 15); //w/h/d/bg/radius%
+        @include orthoPosition(10, 0); //t/l //rotate for diamond or flat rotate only X90
     }  
 
     .ortho__block{

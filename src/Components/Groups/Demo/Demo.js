@@ -2,6 +2,7 @@ import React from 'react';
 import Cylinder from '../../Shapes/Cylinder';
 import Hole from "../../Shapes/Hole";
 import Block from "../../Shapes/Block";
+import BlockRounded from "../../Shapes/BlockRounded";
 import BlockShape from "../../Shapes/BlockShape";
 import Image from "../../Shapes/Image";
 import Text from "../../Shapes/Text";
@@ -16,6 +17,7 @@ function Demo() {
         <div className="demo parent">
             <Hole />
             <Hole rounded />
+            <BlockRounded />
             <Cylinder detail clickable />
             <Block />
             <BlockShape cross />
