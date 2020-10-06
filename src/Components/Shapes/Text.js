@@ -9,9 +9,9 @@ function Text({ clickable, text, amount = 5, clickdepth = 20 }) {
             {/* make an array with length of amount number */}
             {Array.from({ length: amount }, (e, i) => (
                 //load svg elements with either a state change event, or not
-                i === 0 ? (<span style={{ transform: mouseDown ? `translateZ(-${amount / clickdepth - 0.1}vmin)` : "" }}>{text}</span>) :
-                    i < half ? (<span style={{ transform: mouseDown ? `translateZ(-${amount / clickdepth}vmin)` : "" }}>{text}</span>) :
-                        (<span>{text}</span>)
+                i === 0 ? (<span key={i} style={{ transform: mouseDown ? `translateZ(-${amount / clickdepth - 0.1}vmin)` : "" }}>{text}</span>) :
+                    i < half ? (<span key={i} style={{ transform: mouseDown ? `translateZ(-${amount / clickdepth}vmin)` : "" }}>{text}</span>) :
+                        (<span key={i}>{text}</span>)
             ))}
         </p>
     )

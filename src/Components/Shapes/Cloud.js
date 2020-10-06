@@ -4,8 +4,8 @@ import "./Cloud.scss";
 function Cloud({ clickable, amount = 5 }) {
     return (
         <div className={`ortho__cloudGroup shape floating__cloud ${clickable ? "--clickable" : ""}`}>
-            {Array.from({ length: amount }, () =>
-                <div className="ortho__cloud"><span className="ortho__cloudSides"></span></div>
+            {Array.from({ length: amount }, (e, i) =>
+                <div key={i} className="ortho__cloud"><span className="ortho__cloudSides"></span></div>
             )}
         </div>
     )
