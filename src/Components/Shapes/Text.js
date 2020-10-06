@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import "./Text.scss";
 
 function Text({ clickable, text, amount = 5, clickdepth = 2 }) {
     const [mouseDown, setMouseDown] = useState(false);
