@@ -20,10 +20,10 @@ function Demo() {
             <Block />
             <BlockShape cross />
             <BlockShape tick />
-            <Image clickable amount={10} />
+            <Image amount={20} clickable />
             <MessageIcon amount={20} clickable />
-            <Text clickable text="DAY 1" amount={10} />
-            <Heart amount={60} clickable />
+            <Text clickable text="DAY 1" amount={24} />
+            <Heart amount={40} clickdepth={1.6} clickable />
             <Cloud amount={20} />
             <Sphere />
         </div>
