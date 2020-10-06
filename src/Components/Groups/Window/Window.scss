@@ -19,7 +19,6 @@
         &:nth-child(6){@include orthoPosition(10, 83);}
         &:nth-child(7){@include orthoPosition(12, 83);}
         &:nth-child(8){@include orthoPosition(14, 83);}
-        &:nth-child(9){@include block(50, 23.7, 20); @include orthoPosition(33, 29);}
     }
 
     .ortho__cylinder{
