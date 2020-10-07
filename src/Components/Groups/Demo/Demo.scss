@@ -32,15 +32,15 @@
     }  
 
     .ortho__block{
-        @include block(40, 20, 6, #ff3535); //w/h/d/bg
+        @include block(40, 20, 9, #ff3535, 1.8); //w/h/d/bg/clickdepth/cover
         @include orthoPosition(20, 60); //t/l  
 
         &.--cross{  
-            @include block(6, 1.5, 2, #ff3535); //w/h/d/bg
+            @include block(6, 1.5, 2, #ff3535); //w/h/d/bg/clickdepth/cover
             @include orthoPosition(70, 60); //t/l     
         }    
         &.--tick{
-            @include block(6, 1.5, 2, #ff3535); //w/h/d/bg
+            @include block(6, 1.5, 2, #ff3535); //w/h/d/bg/clickdepth/cover
             @include orthoPosition(70, 65); //t/l /rx for tick
         }   
                     

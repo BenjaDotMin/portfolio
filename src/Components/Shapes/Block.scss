@@ -1,20 +1,30 @@
-.ortho__block{           
-    &:after, &:before, .ortho__sides:after, .ortho__sides:before{
-        content: "";                   
-        width: 100%;
-        height: 100%;      
-        position: absolute;   
+.ortho__block{         
+   
+    .ortho__sides,.ortho__coverSides, .ortho__topBottom{width: 100%; height: 100%;}
+    .ortho__sides{background-color: inherit;      
+        &:before{transform-origin: right; right:0; height: 100%;} 
+        &:after{transform-origin: left; height: 100%;}               
+        .ortho__topBottom{background-color: inherit;
+            &:before, &:after{background-color: inherit;}
+            &:before{transform: rotateX(-90deg);  width: 100%;}   
+            &:after{transform:rotateX(90deg); bottom: 0; width: 100%;}                  
+        }
+    } 
+
+    .ortho__cover{pointer-events: none; height: 105%; width: 105%; transform: translateX(-0.5vmin) translateY(-0.5vmin) translateZ(-20vmin); 
+        &:before, &:after{background-color: inherit;}
+        &:before{transform:rotateX(-90deg); width: 100%;}
+        &:after{transform-origin: bottom; transform:rotateX(90deg); width: 100%; bottom:0;}  
+        .ortho__coverSides{background-color:inherit; 
+            &:before, &:after{background-color: inherit; height:101%;}
+            &:before{transform-origin: left; transform:translateX(1px) translateY(-1px) rotateY(90deg);  }
+            &:after{transform-origin: right; transform:translateX(-1px) translateY(-1px) rotateY(-90deg); right:0;}
+        }
     }  
 
-    //rotate the sides independently   
-    &:before{transform-origin: bottom; transform: rotateX(90deg); top: -100%;} //top
-    &:after{transform-origin: top; transform: rotateX(-90deg); top: 100%;} //bottom  
-    
-    .ortho__block{background-color:inherit;}
-  
-    .ortho__sides{background-color: inherit;
-        width: 100%; height: 100%; position: absolute; transform-style: preserve-3d;      
-        &:before{transform: rotateY(-90deg) translateX(100%); transform-origin: right; } //left   
-        &:after{transform: rotateY(90deg) translateX(-100%); transform-origin: left; } //right                  
-    }    
+    .ortho__topBottom, .ortho__cover{&:before{transform-origin: top;}}
+    .ortho__topBottom{&:after{transform-origin: bottom;}}
+    .ortho__sides, .ortho__cover{transform-style: preserve-3d;}
+    .ortho__topBottom, .ortho__coverSides{position: absolute;}
+    &, .ortho__sides, .ortho__cover, .ortho__coverSides, .ortho__topBottom{&:before, &:after{content:""; position: absolute;}}
 }

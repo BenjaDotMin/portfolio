@@ -1,8 +1,17 @@
-.ortho__block{        
-    &.--cross{  
-        .ortho__block{transform:rotateZ(90deg); top: 0; left:0} //rotate inner block         
+.ortho__block{  
+    &.--cross{ 
+        .ortho__block{transform:rotateZ(90deg); top: 0; left:0} //rotate inner block   
+        &:after{content: none;}       
     }    
     &.--tick{ transform: rotateZ(-45deg);
         .ortho__block{width: 25% !important; top: -96%; left: 0; transform: translateZ(0);}
     } 
+    &.--cross, &.--tick{
+        &:before, &:after{width: 100%; height: 100%; background-color: red; transform-origin: top; transform: rotateX(-90deg);} 
+        &:after{transform-origin: bottom; transform: rotateX(90deg); bottom:0;}
+        .ortho__block{width: 100%; height: 100%;
+            &:before, &:after{width: 100%; background-color: red; transform-origin: top; transform: rotateX(-90deg);} 
+        }
+    }
+   
 } 

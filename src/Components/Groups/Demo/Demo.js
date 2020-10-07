@@ -19,7 +19,7 @@ function Demo() {
             <Hole rounded />
             <BlockRounded />
             <Cylinder detail clickable />
-            <Block />
+            <Block clickable />
             <BlockShape cross />
             <BlockShape tick />
             <Image clickable amount={20} />

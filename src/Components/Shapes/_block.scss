@@ -1,20 +1,40 @@
-@mixin block($w:20,$h:20, $d:20, $bg:#f1f1f1){
-    background-color: $bg;
-    width:$w+vmin;height:$h+vmin;
-    &:after, &:before{background-color: darken($bg, 8);}  
-    &:before{height:$d+vmin;top:-$d+vmin;}
-    &:after{height:$d+vmin;}
-    
-    .ortho__sides{transform: translateZ(-$d+vmin); background-color: darken($bg, 8);
-        &:after, &:before{background-color: inherit;}  
-        &:before{width: $d+vmin;left:-$d+vmin;}
-        &:after{width:$d+vmin;right:-$d+vmin;}
+@mixin block($w:20,$h:20, $d:20, $bg:#f1f1f1, $clickdepth:2, $c:white){
+    width: $w+vmin;
+    height: $h+vmin;  
+
+    &:after{transform:translateZ(-$d+vmin); height: 100%; width: 100%; background-color: darken($bg, 8);} 
+
+    .ortho__sides{background-color: $bg;
+        &:before, &:after{background-color: darken($bg, 8); width: $d+vmin; }          
+        &:before{transform: rotateY(-90deg);} 
+        &:after{transform: rotateY(90deg);}                  
+        .ortho__topBottom{
+            &:before, &:after{background-color: darken($bg, 8); height: $d+vmin;}                   
+        }
+    } 
+
+    .ortho__cover{background-color: $c; width: $w+0.5vmin; height: $h+0.5vmin; transform: translateX(-0.25vmin) translateY(-0.25vmin) translateZ(-$d+vmin); 
+        &:before{ transform:rotateX(-90deg); height:$d+vmin;}
+        &:after{transform:rotateX(90deg); height:$d+vmin;}  
+        .ortho__coverSides{
+            &:before, &:after{width: $d+vmin;}
+        }
+    }    
+
+    &.--clickable{
+        .ortho__sides{transition:0.2s;}
+        &:active{
+            .ortho__sides{transform: translateZ(-$d/$clickdepth+vmin)}
+        }
     }
 
-    .ortho__block{width:$w+vmin;height:$h+vmin; 
-        &:after, &:before{background-color: darken($bg, 8);}  
-        &:before{height:$d+vmin;top:-$d+vmin; }
-        &:after{height:$d+vmin;}
+    &.--cross, &.--tick, .ortho__block{       
+        &:before, &:after{height: $d+vmin;}
+        &:before, &:after{background-color: darken($bg, 8);}  
+        
+        .ortho__sides{
+            &:before, &:after{background-color: darken($bg, 8); width: $d+vmin; } 
+        }   
     }
 
     // &.--rounded{
