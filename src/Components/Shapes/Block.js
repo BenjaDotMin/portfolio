@@ -1,15 +1,22 @@
 import React from 'react';
 import "./Block.scss";
 
-function Block({ clickable }) {
+function Block({ clickable, rounded }) {
     return (
-        <div className={`ortho__block shape ${clickable ? "--clickable" : ""}`}>
+        <div className={`ortho__block shape ${clickable ? "--clickable" : ""} ${rounded ? "--rounded" : ""}`}>
             <div className={`ortho__sides`}>
                 <div className="ortho__topBottom"></div>
+                {rounded ? (
+                    <div className="ortho__sides">
+                        <div className="ortho__sides"></div>
+                    </div>
+                ) : ""}
             </div>
-            <div className="ortho__cover">
-                <div className="ortho__coverSides"></div>
-            </div>
+            {clickable ? (
+                <div className="ortho__cover">
+                    <div className="ortho__coverSides"></div>
+                </div>
+            ) : ""}
         </div>
     )
 }

@@ -2,7 +2,6 @@ import React from 'react';
 import Cylinder from '../../Shapes/Cylinder';
 import Hole from "../../Shapes/Hole";
 import Block from "../../Shapes/Block";
-import BlockRounded from "../../Shapes/BlockRounded";
 import BlockShape from "../../Shapes/BlockShape";
 import Image from "../../Shapes/Image";
 import Text from "../../Shapes/Text";
@@ -17,8 +16,8 @@ function Demo() {
         <div className="demo parent">
             <Hole />
             <Hole rounded />
-            <BlockRounded />
             <Cylinder detail clickable />
+            <Block rounded clickable />
             <Block clickable />
             <BlockShape cross />
             <BlockShape tick />
@@ -28,6 +27,7 @@ function Demo() {
             <Heart clickable amount={40} clickdepth={1.6} />
             <Cloud amount={20} />
             <Sphere />
+
         </div>
     )
 }
