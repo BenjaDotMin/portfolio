@@ -1,9 +1,9 @@
 import React from 'react';
 import "./Block.scss";
 
-function Block({ clickable, rounded }) {
+function Block({ className, clickable, rounded }) {
     return (
-        <div className={`ortho__block shape ${clickable ? "--clickable" : ""} ${rounded ? "--rounded" : ""}`}>
+        <div className={`ortho__block shape ${className ? className : ""} ${clickable ? "--clickable" : ""} ${rounded ? "--rounded" : ""}`}>
             <div className={`ortho__sides`}>
                 <div className="ortho__topBottom"></div>
                 {rounded ? (

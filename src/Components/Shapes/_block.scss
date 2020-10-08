@@ -2,7 +2,7 @@
     width: $w+vmin;
     height: $h+vmin;  
 
-    &:after{transform:translateZ(-$d+vmin); height: 100%; width: 100%; background-color: darken($bg, 8);} 
+    &:after{transform:translateZ(-$d+vmin); height: 100%; width: 100%; background-color: darken($bg, 8); top:0} 
 
     .ortho__sides{background-color: $bg;
         &:before, &:after{background-color: darken($bg, 8); width: $d+vmin; }          

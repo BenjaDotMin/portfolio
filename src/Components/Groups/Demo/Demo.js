@@ -17,7 +17,7 @@ function Demo() {
             <Hole />
             <Hole rounded />
             <Cylinder detail clickable />
-            <Block rounded clickable />
+            <Block rounded clickable className="some-class" />
             <Block clickable />
             <BlockShape cross />
             <BlockShape tick />
