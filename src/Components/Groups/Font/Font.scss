@@ -7,9 +7,11 @@
     transform: rotateY(48deg) !important;
     @include orthoPosition();
     
-    .ortho__block{
-        @include block(20, 20, 2);
-        @include orthoPosition();
+    .ortho__block{      
+        &:nth-child(1){
+            @include block(20, 20, 2);
+            @include orthoPosition();
+        }
 
         &:nth-child(2){
             @include block(7, 1.4, 1.4, red);
