@@ -1,0 +1,51 @@
+@import "../../Shapes/_orthoPosition.scss";
+@import "../../Shapes/_block.scss";
+@import "../../Shapes/_cylinder.scss";
+@import "../../Shapes/_svg.scss";
+
+.message{
+    width: 26vmin; height: 26vmin;
+    .ortho__block{
+        @include block(6, 1.4, 1);
+        @include orthoPosition(18, 41);
+        transform: translateZ(6px);    
+    } 
+
+    .title{
+        @include block(9, 0.5, 1);
+        @include orthoPosition(29, 41);
+        transform: translateZ(6px);    
+    } 
+
+    .text{
+        transform: translateZ(6px); 
+        &:nth-child(3){
+            @include block(18, 0.5, 1);
+            @include orthoPosition(42, 15);              
+        }
+        &:nth-child(4){
+            @include block(18, 0.5, 1);
+            @include orthoPosition(48, 15);            
+        }
+        &:nth-child(5){
+            @include block(8, 0.5, 1);
+            @include orthoPosition(54, 15);             
+        }       
+    } 
+
+    .ortho__cylinder{
+        @include cylinder(3.3, 0.5, 1,orange);      
+        @include orthoPosition(8, 85);
+    }
+
+    .ortho__messageIcon{
+        @include svg(26,26, #ff3535); //w/h/front/active 
+        @include orthoPosition(8, 0);      
+    }
+
+    .ortho__user{
+        @include svg(5.4, 39.2, blue); //w/h/front/active 
+        @include orthoPosition(13.4, 12);  
+        transform: translateZ(6px);     
+    }
+}
