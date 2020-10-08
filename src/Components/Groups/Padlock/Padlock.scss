@@ -4,7 +4,7 @@
 @import "../../Shapes/_cylinder.scss";
 
 .padlock{
-    width: 26vmin; height: 26vmin;
+    width: 18vmin; height: 25vmin;
     .ortho__block{
         @include block(18, 15, 3);
         @include orthoPosition(38, 0);  
@@ -12,18 +12,18 @@
     
     .ortho__hole{
         @include hole(12, 20, 1.5, 3,#f1f1f1, 50); //w/h/d/thickness/bg/radius
-        @include orthoPosition(0, 11.5); 
+        @include orthoPosition(0, 16.5); 
         transform: translateZ(-8px); 
     } 
 
     .ortho__cylinder{
         @include cylinder(2, 0, 0,grey, white); //w/d/click-depth/bg/cover-color
-        @include orthoPosition(61, 30.5);  
+        @include orthoPosition(62.5, 44);  
     }
 
     .keyhole{
-        @include hole(1.5, 2, 0.1, 0.75, grey, 50); //w/h/d/thickness/bg/radius
-        @include orthoPosition(66, 31.7); 
+        @include hole(1, 2.5, 0.1, 0.75, grey, 50); //w/h/d/thickness/bg/radius
+        @include orthoPosition(65.5, 45.6); 
         transform: translateZ(0); 
     }
 }

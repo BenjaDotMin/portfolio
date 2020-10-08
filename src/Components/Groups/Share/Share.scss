@@ -1,0 +1,33 @@
+@import "../../Shapes/_orthoPosition.scss";
+@import "../../Shapes/_block.scss";
+@import "../../Shapes/_hole.scss";
+@import "../../Shapes/_cylinder.scss";
+
+.share{
+    width: 16vmin; height: 16vmin;
+    .ortho__cylinder{
+        @include cylinder(6, 2, 1);
+        @include orthoPosition(61, 0);
+       
+        &:nth-child(2){            
+            @include orthoPosition(8, 31.5);  
+        } 
+        &:nth-child(3){      
+            @include orthoPosition(61, 61);  
+        }        
+    }  
+    
+    .ortho__block{     
+        @include block(5, 1, 1);
+        transform-origin: left;
+        &:nth-child(4){            
+            @include orthoPosition(63, 27); 
+            transform: rotateZ(-58deg) translateZ(13px);
+        } 
+        
+        &:nth-child(5){        
+            @include orthoPosition(37, 56); 
+            transform: rotateZ(58deg) translateZ(13px);
+        }
+    } 
+}
