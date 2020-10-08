@@ -1,9 +1,9 @@
 import React from 'react';
 import "./Hole.scss";
 
-function Hole({ rounded }) {
+function Hole({ className, rounded }) {
     return (
-        <div className={`ortho__hole shape ${rounded ? "--rounded" : ""}`}>
+        <div className={`ortho__hole shape ${rounded ? "--rounded" : ""}  ${className ? className : ""}`}>
             <div className="ortho__inner">
                 <div className="ortho__innerSides"></div>
             </div>

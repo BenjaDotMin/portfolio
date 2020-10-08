@@ -17,7 +17,7 @@
     }   
         
     .ortho__hole{
-        @include hole(12, 12, 4, 2, green, 50); //w/h/d/thickness/bg/radius%
+        @include hole(12, 12, 4, 2, green, 65); //w/h/d/thickness/bg/radius
         @include orthoPosition(30, 0); //t/l //rotate for diamond or flat rotate only X90
         
         &.--rounded{ 

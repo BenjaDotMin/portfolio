@@ -1,6 +1,5 @@
 import React from 'react';
 import Block from "../../Shapes/Block";
-import Cylinder from '../../Shapes/Cylinder';
 import MessageIcon from '../../Shapes/MessageIcon';
 import User from '../../Shapes/User';
 import "./Message.scss";

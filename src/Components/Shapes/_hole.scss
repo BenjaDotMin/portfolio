@@ -37,11 +37,11 @@
 
     &.--rounded{    
         &, .ortho__inner, .ortho__sides, .ortho__innerSides{
-            border-radius: $r#{"%"};
+            border-radius: $r+px;
             &:before, &:after{border-radius: inherit; background-color: transparent; border:$b+vmin solid darken($c, 8); left: -$b+vmin !important; height: 100%; width: 100%;}
         }
 
-        .ortho__back{border-radius: $r#{"%"};}
+        .ortho__back{border-radius: $r+px;}
        
         &:before{transform: translateY(-$b+vmin) translateZ(-$d/8+vmin);}
         &:after{transform: translateY(-$b+vmin) translateZ(-$d/4+vmin); top:0;}
