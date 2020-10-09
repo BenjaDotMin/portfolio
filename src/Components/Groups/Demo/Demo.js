@@ -27,7 +27,6 @@ function Demo() {
             <Heart clickable amount={40} clickdepth={1.6} />
             <Cloud amount={20} />
             <Sphere />
-
         </div>
     )
 }

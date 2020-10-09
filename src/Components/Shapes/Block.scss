@@ -1,13 +1,13 @@
 .ortho__block{         
-   &:after{top:0}
     .ortho__sides, .ortho__coverSides, .ortho__topBottom{width: 100%; height: 100%;}
-    .ortho__sides{background-color: inherit;      
-        &:before{transform-origin: right; right:0; height: 100%;} 
-        &:after{transform-origin: left; height: 100%; top:0;}               
-        .ortho__topBottom{background-color: inherit;
+    .ortho__sides{    
+        &:before{transform: rotateY(90deg); transform-origin: left; height: 100%; top:0;} 
+        &:after{transform: rotateY(-90deg); transform-origin: right; right:0; height: 100%;}  
+ 
+        .ortho__topBottom{transform-style: preserve-3d;
             &:before, &:after{background-color: inherit;}
-            &:before{transform: rotateX(-90deg);  width: 100%;}   
-            &:after{transform:rotateX(90deg); bottom: 0; width: 100%;}                  
+            &:before{transform: rotateX(90deg); width: 100%;}   
+            &:after{transform:rotateX(-90deg); bottom: 0; width: 100%;}                  
         }
     } 
 
@@ -26,5 +26,5 @@
     .ortho__topBottom{&:after{transform-origin: bottom;}}
     .ortho__sides, .ortho__cover{transform-style: preserve-3d;}
     .ortho__topBottom, .ortho__coverSides{position: absolute;}
-    &, .ortho__sides, .ortho__cover, .ortho__coverSides, .ortho__topBottom{&:before, &:after{content:""; position: absolute;}}
+    .ortho__sides, .ortho__cover, .ortho__coverSides, .ortho__topBottom{&:before, &:after{content:""; position: absolute;}}
 }
