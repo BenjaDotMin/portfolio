@@ -1,6 +1,6 @@
 import React from 'react';
 import "./Hero.scss";
-import Demo from "./Groups/Demo/Demo";
+import Laptop from "./Groups/Laptop/Laptop";
 function Hero() {
 
     return (
@@ -11,7 +11,7 @@ function Hero() {
             </div>
 
             <div className="ortho">
-                <Demo />
+                <Laptop />
                 {/* stuff slowly floats? */}
                 {/* rolling balls around content, behind and infront? - if hero slides right */}
                 {/* cup, calender */}

@@ -1,9 +1,9 @@
 import React from 'react';
 import "./Cylinder.scss";
 
-function Cylinder({ clickable, detail }) {
+function Cylinder({ className, clickable, detail }) {
     return (
-        <div className={`ortho__cylinder shape ${clickable ? "--clickable" : ""}`}>
+        <div className={`ortho__cylinder shape ${className ? className : ""} ${clickable ? "--clickable" : ""}`}>
 
             <div className="ortho__shadow">
                 {detail ? (<>

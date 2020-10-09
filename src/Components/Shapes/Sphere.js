@@ -2,9 +2,9 @@ import React from 'react';
 import "./Sphere.scss";
 
 
-function Sphere() {
+function Sphere({ className }) {
     return (
-        <div className="ortho__sphere shape" ></div>
+        <div className={`ortho__sphere shape ${className ? className : ""} ${className ? className : ""}`}></div>
     )
 }
 
