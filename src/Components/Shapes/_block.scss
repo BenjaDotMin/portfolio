@@ -1,6 +1,8 @@
 @mixin block($w:20,$h:20, $d:20, $bg:#f1f1f1, $clickdepth:2, $r:2, $c:white){
     width: $w+vmin;
-    height: $h+vmin;  
+    height: $h+vmin; 
+    
+    &:after{transform:translateZ(-$d+vmin); background-color: darken($bg, 8);} 
 
     .ortho__sides{background-color: $bg; 
         &:before, &:after{background-color: darken($bg, 8); width: $d+vmin;}                         

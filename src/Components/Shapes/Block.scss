@@ -1,5 +1,6 @@
-.ortho__block{         
-    .ortho__sides, .ortho__coverSides, .ortho__topBottom{width: 100%; height: 100%;}
+.ortho__block{   
+   
+    &:after, .ortho__sides, .ortho__coverSides, .ortho__topBottom{width: 100%; height: 100%;}
     .ortho__sides{    
         &:before{transform: rotateY(90deg); transform-origin: left; height: 100%; top:0;} 
         &:after{transform: rotateY(-90deg); transform-origin: right; right:0; height: 100%;}  
@@ -27,4 +28,5 @@
     .ortho__sides, .ortho__cover{transform-style: preserve-3d;}
     .ortho__topBottom, .ortho__coverSides{position: absolute;}
     .ortho__sides, .ortho__cover, .ortho__coverSides, .ortho__topBottom{&:before, &:after{content:""; position: absolute;}}
+    &:after{content: ""; position: absolute;}
 }
