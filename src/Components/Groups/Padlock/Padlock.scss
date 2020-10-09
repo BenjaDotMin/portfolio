@@ -1,4 +1,3 @@
-@import "../../Shapes/_orthoPosition.scss";
 @import "../../Shapes/_block.scss";
 @import "../../Shapes/_hole.scss";
 @import "../../Shapes/_cylinder.scss";
@@ -7,23 +6,23 @@
     width: 18vmin; height: 25vmin;
     .ortho__block{
         @include block(18, 15, 3);
-        @include orthoPosition(38, 0);  
+        @include osition(38, 0);  
     } 
     
     .ortho__hole{
         @include hole(12, 20, 1.5, 3,#f1f1f1, 50); //w/h/d/thickness/bg/radius
-        @include orthoPosition(0, 16.5); 
+        left:16.5%;
         transform: translateZ(-8px); 
     } 
 
     .ortho__cylinder{
         @include cylinder(2, 0, 0,grey, white); //w/d/click-depth/bg/cover-color
-        @include orthoPosition(62.5, 44);  
+        top:62.5%; left:44%;  
     }
 
     .keyhole{
         @include hole(1, 2.5, 0.1, 0.75, grey, 50); //w/h/d/thickness/bg/radius
-        @include orthoPosition(65.5, 45.6); 
+        top:65.5%; left:45.6%; 
         transform: translateZ(0); 
     }
 }

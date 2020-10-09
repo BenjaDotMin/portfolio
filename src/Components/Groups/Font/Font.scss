@@ -1,21 +1,18 @@
 @import "../../Shapes/_text.scss";
 @import "../../Shapes/_block.scss";
-@import "../../Shapes/_orthoPosition.scss";
 
 .font{
     width: 20vmin; height: 20vmin;
     transform: rotateY(48deg) !important;
-    @include orthoPosition();
-    
+
     .ortho__block{      
         &:nth-child(1){
             @include block(20, 20, 2);
-            @include orthoPosition();
-        }
+         }
 
         &:nth-child(2){
             @include block(7, 1.4, 1.4, red);
-            @include orthoPosition(18, 50);
+            top:18%; left:50%;
             transform: translateX(-50%) translateZ(15px);
         }
     }
@@ -24,6 +21,6 @@
         width: 9vmin; height: 15vmin;
         transform: translateX(-50%) translateZ(15px);
         @include text(red);        
-        @include orthoPosition(20, 50);
+        top:20%; left:50%;
     }
 }

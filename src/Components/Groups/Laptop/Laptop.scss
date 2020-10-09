@@ -1,12 +1,9 @@
-@import "../../Shapes/_orthoPosition.scss";
 @import "../../Shapes/_block.scss";
 @import "../../Shapes/_hole.scss";
 @import "../../Shapes/_cylinder.scss";
 
 .laptop{
     width: 50vmin; height: 27.5vmin;
-    top:0;
-    left:0;
     
     .ortho__block{            
         &.laptop__top, &.laptop__bottom{
