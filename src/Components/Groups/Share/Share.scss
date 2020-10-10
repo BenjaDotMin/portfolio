@@ -5,7 +5,7 @@
 .share{
     width: 16vmin; height: 16vmin;
     .ortho__cylinder{
-        @include cylinder(6, 2, 1);
+        @include cylinder(6, 1.2, 1);
 
         &:nth-child(1){ 
             top:61%;
@@ -28,7 +28,7 @@
         } 
         
         &:nth-child(5){        
-            top:37%; left:560%;
+            top:37%; left:56%;
             transform: rotateZ(58deg) translateZ(13px);
         }
     } 

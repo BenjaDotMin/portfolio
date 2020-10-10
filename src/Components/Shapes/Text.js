@@ -6,7 +6,7 @@ function Text({ className, clickable, text, amount = 5, clickdepth = 2 }) {
     const move = amount / clickdepth;
 
     return (
-        <p onMouseDown={() => setMouseDown(b => !b)} onMouseUp={() => setMouseDown(b => !b)} onMouseLeave={() => setMouseDown(false)} className={`ortho__text shape ${clickable ? "--clickable" : ""} ${className ? className : ""}`}>
+        <p onMouseDown={() => setMouseDown(b => !b)} onMouseUp={() => setMouseDown(b => !b)} onMouseLeave={() => setMouseDown(false)} className={`ortho__text __3d ${clickable ? "--clickable" : ""} ${className ? className : ""}`}>
             {/* make an array with length of amount number */}
             {Array.from({ length: amount }, (e, i) => (
                 //load svg elements with either a state change event, or not

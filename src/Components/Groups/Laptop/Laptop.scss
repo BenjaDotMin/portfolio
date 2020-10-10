@@ -3,16 +3,16 @@
 @import "../../Shapes/_cylinder.scss";
 
 .laptop{
-    width: 50vmin; height: 27.5vmin;
+    width: 26.3vmin; height: 16vmin;
     
     .ortho__block{            
         &.laptop__top, &.laptop__bottom{
-            @include block(50, 1.5, 26);
+            @include block(26, 1, 16);
             &, .ortho__topBottom, .ortho__sides{border-radius: 5px; &:before, &:after{border-radius: 5px;}}
         }
         
         &.laptop__top{            
-            transform: translateZ(-26vmin) rotateX(180deg);
+            transform: translateZ(-16vmin) rotateX(180deg);
             //&:after{background-color: #f1f1f1;}
             //.ortho__topBottom{background-color: #ddd !important; &:before, &:after{background-color: #f1f1f1 !important;}}
             .ortho__topBottom{background-color: #f1f1f1 !important; &:after{background-color: #f1f1f1;}}
@@ -31,7 +31,7 @@
         @include cylinder(3, 0.4, 1.5, red, #f1f1f1);
         right:8%;
         bottom:0;
-        transform: translateZ(-21vmin) rotateX(90deg);
+        transform: translateZ(-12vmin) translateY(0.5vmin)  rotateX(90deg);
         .ortho__cover{display: none;}
         .ortho__shadow{&:before{transform: rotateX(45deg);}}
     }

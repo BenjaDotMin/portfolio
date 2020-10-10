@@ -10,7 +10,7 @@ function Laptop() {
 
     //add to timeline after render, run only once with []
     useEffect(() => {
-        laptopTop.to(".laptop__top", { duration: 1.5, rotateX: 290, ease: "sine.inOut" })
+        laptopTop.to(".laptop__top", { duration: 1, rotateX: 290, ease: "sine.inOut" })
     }, []);
 
     //another, run every time var changes
@@ -24,7 +24,7 @@ function Laptop() {
     }, [laptopOpen]);
 
     return (
-        <div className="laptop parent" onClick={() => setLaptopOpen(!laptopOpen)}>
+        <div className="laptop __3d" onClick={() => setLaptopOpen(!laptopOpen)}>
             <Block className="laptop__top" />
             <Block className="laptop__bottom" />
             <Cylinder clickable className="laptop__button" />

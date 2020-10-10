@@ -3,7 +3,7 @@ import "./Cylinder.scss";
 
 function Cylinder({ className, clickable, detail }) {
     return (
-        <div className={`ortho__cylinder shape ${className ? className : ""} ${clickable ? "--clickable" : ""}`}>
+        <div className={`ortho__cylinder __3d ${className ? className : ""} ${clickable ? "--clickable" : ""}`}>
 
             <div className="ortho__shadow">
                 {detail ? (<>

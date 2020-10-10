@@ -6,7 +6,7 @@ import "./Mag_Glass.scss";
 
 function Mag_Glass() {
     return (
-        <div className="mag_glass parent">
+        <div className="mag_glass __3d">
             <Block rounded />
             <Block rounded />
             <Hole rounded />

@@ -6,7 +6,7 @@ import "./Padlock.scss";
 
 function Padlock() {
     return (
-        <div className="padlock parent">
+        <div className="padlock __3d">
             <Block rounded />
             <Hole rounded />
             <Hole rounded className="keyhole" />

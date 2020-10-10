@@ -22,7 +22,7 @@ function MessageIcon({ clickable, float, amount = 5, clickdepth = 2 }) {
     }, [])
 
     return (
-        <div onMouseDown={() => setMouseDown(b => !b)} onMouseUp={() => setMouseDown(b => !b)} onMouseLeave={() => setMouseDown(false)} className={`ortho__messageIcon shape ${clickable ? "--clickable" : ""} ${float ? "--float" : ""}`} ref={messageBox}>
+        <div onMouseDown={() => setMouseDown(b => !b)} onMouseUp={() => setMouseDown(b => !b)} onMouseLeave={() => setMouseDown(false)} className={`ortho__messageIcon __3d ${clickable ? "--clickable" : ""} ${float ? "--float" : ""}`} ref={messageBox}>
             {/* make an array with length of amount number */}
             {Array.from({ length: amount }, (e, i) => (
                 //load svg elements with either a state change event, or not

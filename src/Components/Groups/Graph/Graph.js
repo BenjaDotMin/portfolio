@@ -17,7 +17,7 @@ function Graph() {
     // }, [])
 
     return (
-        <div className="graph parent">
+        <div className="graph __3d">
             <Block />
             <Block className="bar bar__one" />
             <Block className="bar bar__two" />

@@ -1,0 +1,143 @@
+@import "../Shapes/_block.scss";
+@import "../Shapes/_hole.scss";
+@import "../Shapes/_svg.scss";
+@import "../Shapes/_cylinder.scss";
+@import "../Shapes/_sphere.scss";
+@import "../Shapes/_colorCloud.scss";
+
+.scene{
+    transform: rotateY(-45deg); transform-origin: right; 
+    bottom:0; right:0;
+    width: 90vw; height: 100vh;
+
+    .laptop{
+        bottom:43.2%; right:45%;
+        transform: translateX(45%) translateZ(-31vmin);
+    }
+
+    .floor{
+        bottom:0%; right:45%;
+        transform: translateX(45%) translateZ(-24.2vmin);
+        @include block(36, 43, 30);
+    }
+
+    .floor__front{
+        bottom:0%; right:45%;
+        transform: translateX(45%) translateZ(-0vmin);
+        @include block(28, 19, 24);
+    }
+
+    .floor__right{
+        bottom:0%; right:28%;
+        transform: translateX(28%) translateZ(-29vmin);
+        @include block(14, 14, 14);
+    }
+
+    .floor__left{
+        bottom:0%; right:68%;
+        transform: translateX(68%) translateZ(-20vmin);
+        @include block(10, 35, 12);
+    }
+
+    .main__window{
+        bottom:52%; right:45%;
+        transform: translateX(45%) translateZ(6vmin);
+    }
+
+    .font{
+        bottom:0%; right:72%;
+        transform: translateX(72%) translateZ(-0vmin) scale(0.65);
+    }
+
+    .graph{
+        bottom:50%; right:42%;
+        transform: translateX(42%) translateZ(20vmin) scale(0.45);
+    }
+
+    .mag_glass{
+        bottom:0%; right:42%;
+        transform: translateX(42%) translateZ(20vmin) rotateZ(-20deg) scale(0.45) ;
+    }
+
+    .message{
+        top:20%; right:20%;
+        transform: translateX(20%) translateZ(20vmin) scale(0.75) ;
+    }
+
+    .padlock{
+        bottom:26%; right:7%;
+        transform: translateX(7%) translateZ(20vmin) scale(0.35) ;
+    }
+
+    .share{
+        bottom:22%; right:62%;
+        transform: translateX(62%) translateZ(20vmin) scale(0.35) ;
+    }
+
+    .donut{
+        bottom:32%; right:20.5%;
+        transform: translateX(20.5%) translateZ(20vmin);
+        @include hole(6, 6, 2, 1.4,orange, 65); //w/h/d/thickness/bg/radius        
+    } 
+
+    .large__hole{
+        bottom:48%; right:8%;
+        transform: translateX(8%) translateZ(20vmin);
+        @include hole(5, 5, 2, 1,#f1f1f1, 65); //w/h/d/thickness/bg/radius        
+    } 
+
+    .cylinder{
+        bottom:42%; right:65%;
+        transform: translateX(65%) translateZ(20vmin) ;
+        @include cylinder(5, 1, 1.6,blue, white); //w/d/click-depth/bg/cover-color
+        
+    } 
+
+    .ortho__sphere{   
+        bottom:0%; right:54%;
+        transform: translateX(54%) translateZ(20vmin) rotateY(48deg); 
+        @include sphere(7, 7, #ff3535); //w/h/bg      
+    }
+
+    .ortho__cloudGroup{             
+        top:15%; right:14%;
+        transform: translateX(14%) translateZ(20vmin) scale(0.4);       
+        @include colorCloud(#ff3535); //bg
+    }
+
+    .tick{
+        top:53%; right:51%;
+        transform: translateX(51%) translateZ(20vmin) rotateZ(-45deg);  
+        @include block(6, 1.5, 2, #ff3535); //w/h/d/bg/clickdepth/radius/cover-color
+    }
+
+    .cross{
+        top:34%; right:11%;
+        transform: translateX(11%) translateZ(20vmin);  
+        @include block(6, 1.5, 2, #ff3535); //w/h/d/bg/clickdepth/radius/cover-color
+    }
+
+    .rounded__block{
+        top:60%; right:34%;
+        transform: translateX(34%) translateZ(20vmin);
+        @include block(17, 5, 3, #b4339f, 2, 4); //w/h/d/bg/clickdepth/radius/cover-color
+    }
+
+    .image{
+        top:72%; right:40.5%;
+        transform: translateZ(-6vmin);
+        @include svg(14, 7.3, #ff3535); //w/h/front/active 
+    }
+
+    .heart{
+        top:20%; left:23%;
+        transform: translateZ(-6vmin) scale(0.6);
+        @include svg(14, 13.3, #ff3535, black); //w/h/front/active  
+    }
+
+    .phone{
+        top:26%; left:23%;
+        transform: translateZ(-0vmin) scale(0.6);
+    }
+    
+}

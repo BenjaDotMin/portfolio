@@ -3,8 +3,7 @@
 
 .font{
     width: 20vmin; height: 20vmin;
-    transform: rotateY(48deg) !important;
-
+   
     .ortho__block{      
         &:nth-child(1){
             @include block(20, 20, 2);

@@ -6,7 +6,7 @@ import "./Message.scss";
 
 function Message() {
     return (
-        <div className="message parent">
+        <div className="message __3d">
             <Block />
             <Block className="title" />
             <Block className="text" />

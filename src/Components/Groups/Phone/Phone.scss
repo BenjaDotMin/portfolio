@@ -1,0 +1,24 @@
+@import "../../Shapes/_block.scss";
+@import "../../Shapes/_hole.scss";
+@import "../../Shapes/_cylinder.scss";
+
+.phone{
+    width: 18vmin; height: 33vmin;
+
+    .phone__button{
+        @include cylinder(3.2, 1.5); 
+        left:50%;
+        bottom: 6.5%;
+        transform: translateX(-50%);          
+    }  
+
+    .phone__frame{
+        @include hole(18, 33, 2, 0.5, #f1f1f1, 20); //w/h/d/thickness/bg/radius
+    }
+
+    .phone__top{
+        left:50%;
+        transform: translateX(-50%);         
+        @include block(6, 1.5, 2, #f1f1f1); //w/h/d/bg/clickdepth/radius/cover-color
+    }
+}

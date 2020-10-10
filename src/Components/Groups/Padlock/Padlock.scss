@@ -5,8 +5,8 @@
 .padlock{
     width: 18vmin; height: 25vmin;
     .ortho__block{
-        @include block(18, 15, 3);
-        @include osition(38, 0);  
+        @include block(18, 15, 2.7);
+        top:38%  
     } 
     
     .ortho__hole{

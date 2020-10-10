@@ -4,9 +4,9 @@ import Block from "../../Shapes/Block";
 import Cylinder from "../../Shapes/Cylinder";
 import "./Window.scss";
 
-function Window() {
+function Window({ className }) {
     return (
-        <div className="window parent">
+        <div className={`window __3d ${className ? className : ""}`}>
             <Hole />
             <Block />
             <Cylinder clickable />

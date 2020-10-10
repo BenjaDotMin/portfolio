@@ -5,7 +5,7 @@ import "./Share.scss";
 
 function Share() {
     return (
-        <div className="share parent">
+        <div className="share __3d">
             <Cylinder />
             <Cylinder />
             <Cylinder />

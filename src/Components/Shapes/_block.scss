@@ -27,12 +27,17 @@
         }  
     }
 
+    &.--cross, &.--tick{
+        &:after{background-color: transparent;}
+    }
+
     &.--rounded{
         &, .ortho__sides, .ortho__topBottom{border-radius: $r+vmin; &:before, &:after{border-radius: $r+vmin;}}       
 
         .ortho__topBottom{ transform:translateZ(-$d/4+vmin); background-color:darken($bg, 8);}  
 
         .ortho__sides, .ortho__topBottom{ 
+            &:before, &:after{width:100%; height: 100%;}
             &:before{transform:translateZ(-$d/12+vmin);} 
             &:after{transform:translateZ(-$d/6+vmin);}
 

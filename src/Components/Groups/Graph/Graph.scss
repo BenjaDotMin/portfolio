@@ -3,8 +3,9 @@
 
 .graph{
     width: 52vmin; height: 31vmin;
+
     .ortho__block{
-        @include block(52, 31, 2);
+        @include block(52, 31, 1.2);
     } 
 
     [class*="bar"]{

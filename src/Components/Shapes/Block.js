@@ -3,7 +3,7 @@ import "./Block.scss";
 
 function Block({ className, clickable, rounded }) {
     return (
-        <div className={`ortho__block shape ${className ? className : ""} ${clickable ? "--clickable" : ""} ${rounded ? "--rounded" : ""}`}>
+        <div className={`ortho__block __3d ${className ? className : ""} ${clickable ? "--clickable" : ""} ${rounded ? "--rounded" : ""}`}>
             <div className={`ortho__sides`}>
                 <div className="ortho__topBottom"></div>
                 {rounded ? (

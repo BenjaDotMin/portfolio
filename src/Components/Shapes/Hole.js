@@ -3,7 +3,7 @@ import "./Hole.scss";
 
 function Hole({ className, rounded }) {
     return (
-        <div className={`ortho__hole shape ${rounded ? "--rounded" : ""}  ${className ? className : ""}`}>
+        <div className={`ortho__hole __3d ${rounded ? "--rounded" : ""}  ${className ? className : ""}`}>
             <div className="ortho__inner">
                 <div className="ortho__innerSides"></div>
             </div>

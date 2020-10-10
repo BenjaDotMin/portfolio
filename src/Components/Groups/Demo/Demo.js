@@ -13,7 +13,7 @@ import "./Demo.scss";
 
 function Demo() {
     return (
-        <div className="demo parent">
+        <div className="demo __3d">
             <Hole />
             <Hole rounded />
             <Cylinder detail clickable />

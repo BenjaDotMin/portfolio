@@ -4,33 +4,32 @@
 @import "../../Shapes/_colorCloud.scss";
 
 .window{
-    width: 90vmin; height: 50vmin;
-    top:30%; left:54%;
-
+    width: 60vmin; height: 38vmin;
+    
     .ortho__hole{
-        @include hole(80, 48, 2, 0.8, #f1f1f1, 0); //w/h/d/thickness/color/radius
+        @include hole(60, 38, 0.6, 0.6, #f1f1f1, 0); //w/h/d/thickness/color/radius
     }
 
     .ortho__block{    
-        &:nth-child(2){top:0; left:0; @include block(80, 3.7, 2);} //w/h/d/bg      
+        &:nth-child(2){top:0; left:0; @include block(60, 3.7, 0.5);} //w/h/d/bg      
         &:nth-child(6),&:nth-child(7), &:nth-child(8){ @include block(3, 0.55, 2);}
-        &:nth-child(6){top:10%; left:83%;}
-        &:nth-child(7){top:12%; left:83%;}
-        &:nth-child(8){top:14%; left:83%;}
+        &:nth-child(6){top:14%; right: 5%;}
+        &:nth-child(7){top:16.7%; right: 5%;}
+        &:nth-child(8){top:19.4%; right: 5%;}
     }
 
     .ortho__cylinder{
         &:nth-child(3){
             @include cylinder(1.8, 0.6, 1.6, #ff3535, #f1f1f1); //w/d/click-depth/bg/cover
-            top:1.98%; left:2%;          
+            top:2.7%; left:2%;          
         }
         &:nth-child(4){
             @include cylinder(1.8, 0.6, 1.6, #fdb140, #f1f1f1);
-            top:1.98%; left:5.2%;               
+            top:2.7%; left:6.7%;               
         }
         &:nth-child(5){
             @include cylinder(1.8, 0.6, 1.6, #34ce27, #f1f1f1);    
-            top:1.98%; left:8.5%;              
+            top:2.7%; left:11.6%;              
         }
     }
 }
